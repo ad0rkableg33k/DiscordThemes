@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DiscordThemes | ad0rkableg33k</title>
+<meta name="description" content="Gothic punk Equicord themes by ad0rkableg33k — pink, neon green, and blood red.">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #050003;
+    --black-soft: #0e0309;
+    --pink: #ff1fa0;
+    --pink-bright: #ff5fc4;
+    --magenta: #c400c4;
+    --purple: #b967ff;
+    --green: #39ff14;
+    --red: #ff1414;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 20% 10%, rgba(196,0,196,0.15), transparent 50%),
+                radial-gradient(circle at 80% 90%, rgba(255,31,160,0.1), transparent 50%),
+                var(--black);
+    color: #f4d8ee;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    text-align: center;
+    padding: 4rem 1.5rem 2.5rem;
+  }
+  header h1 {
+    font-family: 'Creepster', cursive;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    letter-spacing: 2px;
+    margin: 0;
+    color: var(--pink-bright);
+    text-shadow: 0 0 8px var(--pink), 0 0 22px var(--magenta), 0 0 40px var(--magenta);
+  }
+  header p {
+    color: #d6a8c8;
+    max-width: 34rem;
+    margin: 1rem auto 0;
+    font-size: 1.05rem;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .card {
+    background: var(--black-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-4px); }
+  .swatch {
+    height: 10px;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+  }
+  .swatch.pink { background: linear-gradient(90deg, var(--pink), var(--magenta)); box-shadow: 0 0 12px var(--pink); }
+  .swatch.green { background: linear-gradient(90deg, var(--green), var(--purple)); box-shadow: 0 0 12px var(--green); }
+  .swatch.red { background: linear-gradient(90deg, var(--red), #4d0000); box-shadow: 0 0 12px var(--red); }
+  .card h2 {
+    font-family: 'Creepster', cursive;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem;
+  }
+  .card.pink h2 { color: var(--pink-bright); text-shadow: 0 0 6px var(--pink); }
+  .card.green h2 { color: var(--green); text-shadow: 0 0 6px var(--green); }
+  .card.red h2 { color: var(--red); text-shadow: 0 0 6px var(--red); }
+  .card p { color: #c9a8bd; font-size: 0.92rem; min-height: 3.6em; }
+  .btn {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .btn:hover { transform: scale(1.03); }
+  .card.pink .btn { background: linear-gradient(135deg, var(--pink), var(--magenta)); box-shadow: 0 0 8px var(--pink); }
+  .card.green .btn { background: linear-gradient(135deg, var(--green), var(--purple)); box-shadow: 0 0 8px var(--green); color: #05130a;}
+  .card.red .btn { background: linear-gradient(135deg, var(--red), #4d0000); box-shadow: 0 0 8px var(--red); }
+  .card.pink .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--magenta); }
+  .card.green .btn:hover { box-shadow: 0 0 16px var(--green), 0 0 30px var(--purple); }
+  .card.red .btn:hover { box-shadow: 0 0 16px var(--red); }
+
+  section.install {
+    background: var(--black-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+  section.install h2 {
+    font-family: 'Creepster', cursive;
+    color: var(--pink-bright);
+    text-shadow: 0 0 6px var(--pink);
+    letter-spacing: 1px;
+    margin-top: 0;
+  }
+  ol { padding-left: 1.25rem; }
+  ol li { margin-bottom: 0.6rem; }
+  code {
+    background: #1c0616;
+    border: 1px solid var(--magenta);
+    color: var(--pink-bright);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.88rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    color: #7a5c6e;
+    font-size: 0.85rem;
+  }
+  footer a { color: var(--pink-bright); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>DiscordThemes</h1>
+  <p>Gothic punk Equicord themes by ad0rkableg33k. Glowing headers, animated gradient title bars, glittery unread badges, and a custom underglow cursor — MySpace-core, but make it witchy.</p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <div class="card pink">
+      <div class="swatch pink"></div>
+      <h2>Gothic Punk</h2>
+      <p>Hot pink & magenta over black. The original — witchy glow on everything from headers to the cursor trail.</p>
+      <a class="btn" href="themes/gothic-punk-pink-magenta.theme.css" download>Download .theme.css</a>
+    </div>
+
+    <div class="card green">
+      <div class="swatch green"></div>
+      <h2>Neon Coven</h2>
+      <p>Neon green main color with purple accents. Same effects, totally different mood — more toxic-glow than witchy-glow.</p>
+      <a class="btn" href="themes/neon-coven-green-purple.theme.css" download>Download .theme.css</a>
+    </div>
+
+    <div class="card red">
+      <div class="swatch red"></div>
+      <h2>Blood Coven</h2>
+      <p>Blood red main color, and regular body text set to glowing black — a red halo around black text for that "shadow made visible" look.</p>
+      <a class="btn" href="themes/blood-coven-red-black.theme.css" download>Download .theme.css</a>
+    </div>
+
+  </div>
+
+  <section class="install">
+    <h2>Installation</h2>
+    <ol>
+      <li>Open Discord and go to <strong>User Settings</strong> (the gear icon next to your username).</li>
+      <li>Scroll to the <strong>Equicord</strong> section in the sidebar and click <strong>Themes</strong>.</li>
+      <li>Click the folder icon ("Open Themes Folder") near the top of the page — this opens the local folder Equicord loads <code>.theme.css</code> files from.</li>
+      <li>Download whichever theme(s) you want using the buttons above, and move the file(s) into that folder.</li>
+      <li>Back in the Themes tab, the theme will show up in the list — toggle it <strong>on</strong>.</li>
+      <li>Reload Discord (<code>Ctrl+R</code> / <code>Cmd+R</code>) if anything looks off.</li>
+    </ol>
+    <p>You can install more than one at once — they won't conflict, so switch between them whenever the mood changes.</p>
+  </section>
+</main>
+
+<footer>
+  made with 🖤 by <a href="https://github.com/ad0rkableg33k">ad0rkableg33k</a>
+</footer>
+
+</body>
+</html>
