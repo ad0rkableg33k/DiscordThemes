@@ -1,0 +1,300 @@
+/**
+ * @name ad0rkableg33k Static Shock
+ * @description Hot pink main color with neon green secondary accents, over the same black background. Made for @ad0rkableg33k.
+ * @author ad0rkableg33k & Claude
+ * @version 1.0.0
+ * @authorId 0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  /* === CORE PALETTE === */
+  --g33k-pink: #ff1fa0;
+  --g33k-pink-bright: #ff5fc4;
+  --g33k-magenta: #39ff14;
+  --g33k-magenta-deep: #1f8f0a;
+  --g33k-black: #010000;
+  --g33k-black-soft: #0a0107;
+  --g33k-glow: 0 0 6px var(--g33k-pink), 0 0 14px var(--g33k-magenta);
+  --g33k-purple: #39ff14;
+  --g33k-purple-deep: #1f8f0a;
+  --g33k-purple-glow: 0 0 6px var(--g33k-purple), 0 0 14px var(--g33k-purple-deep);
+
+  /* === DISCORD VARIABLE OVERRIDES === */
+  --background-primary: var(--g33k-black);
+  --background-secondary: var(--g33k-black-soft);
+  --background-secondary-alt: #0f030b;
+  --background-tertiary: #000000;
+  --background-floating: var(--g33k-black-soft);
+  --background-mobile-primary: var(--g33k-black);
+  --background-mobile-secondary: var(--g33k-black-soft);
+
+  --background-accent: var(--g33k-magenta);
+  --background-message-hover: rgba(255, 31, 160, 0.08);
+
+  --channeltextarea-background: #0f030b;
+
+  --brand-experiment: var(--g33k-pink);
+  --brand-experiment-560: var(--g33k-magenta);
+
+  --header-primary: #ffe6f7;
+  --header-secondary: var(--g33k-pink-bright);
+  --text-normal: #f4d8ee;
+  --text-muted: #a86392;
+  --text-link: var(--g33k-pink-bright);
+
+  --interactive-normal: #e6a3d0;
+  --interactive-hover: #ffffff;
+  --interactive-active: var(--g33k-pink);
+  --interactive-muted: #5c2b4c;
+
+  --scrollbar-thin-thumb: var(--g33k-magenta);
+  --scrollbar-auto-thumb: var(--g33k-magenta);
+  --scrollbar-auto-track: var(--g33k-black);
+}
+
+/* === GLOBAL FONT === */
+body, .theme-dark {
+  font-family: 'Poppins', 'gg sans', sans-serif !important;
+}
+
+/* Witchy display font on real page headings (welcome screens, modal titles) — NOT sidebar/channel text */
+h1, h2, [class*="headerText"] {
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 1px;
+  color: var(--g33k-pink-bright) !important;
+  text-shadow: var(--g33k-glow);
+}
+
+/* Current channel name at the top-center of the chat header: glow pink like other headers */
+[class*="headerBar"] [class*="title_"],
+[class*="header_"] [class*="title_"],
+[class*="chat_"] [class*="title_"] {
+  font-family: 'Creepster', cursive !important;
+  letter-spacing: 1px;
+  color: var(--g33k-pink-bright) !important;
+  text-shadow: var(--g33k-glow) !important;
+}
+
+/* === CUSTOM CURSOR: black arrow, bright hot pink underglow (extra glow) === */
+html, body, [class*="app_"] {
+  cursor: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22><defs><filter id=%22g%22 x=%22-80%25%22 y=%22-80%25%22 width=%22260%25%22 height=%22260%25%22><feDropShadow dx=%220%22 dy=%220%22 stdDeviation=%224%22 flood-color=%22%23ff1fa0%22 flood-opacity=%221%22/><feDropShadow dx=%220%22 dy=%220%22 stdDeviation=%229%22 flood-color=%22%23ff1fa0%22 flood-opacity=%220.85%22/></filter></defs><path d=%22M8 4L8 38L16 29L21 41L27 39L21 27L33 27Z%22 fill=%22%23010000%22 stroke=%22%23ff5fc4%22 stroke-width=%221.5%22 filter=%22url(%23g)%22/></svg>') 8 4, auto !important;
+}
+
+/* Pointer / clickable elements: same black cursor, even brighter/bigger glow so it reads as "interactive" */
+a, button, [role="button"], [class*="clickable"], [class*="cursorPointer"],
+[class*="interactive"], summary, [class*="tab_"], [class*="listItem_"] {
+  cursor: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2248%22 height=%2248%22 viewBox=%220 0 48 48%22><defs><filter id=%22g2%22 x=%22-80%25%22 y=%22-80%25%22 width=%22260%25%22 height=%22260%25%22><feDropShadow dx=%220%22 dy=%220%22 stdDeviation=%225%22 flood-color=%22%23ff1fa0%22 flood-opacity=%221%22/><feDropShadow dx=%220%22 dy=%220%22 stdDeviation=%2212%22 flood-color=%22%23ff1fa0%22 flood-opacity=%220.9%22/></filter></defs><path d=%22M8 4L8 38L16 29L21 41L27 39L21 27L33 27Z%22 fill=%22%23010000%22 stroke=%22%23ff1fa0%22 stroke-width=%222%22 filter=%22url(%23g2)%22/></svg>') 8 4, pointer !important;
+}
+
+/* === APP BACKGROUND: near-black with just a whisper of magenta at the edges === */
+[class*="app_"], [class*="bg_"] {
+  background: radial-gradient(circle at top left, rgba(57, 255, 20, 0.06), transparent 50%),
+              radial-gradient(circle at bottom right, rgba(255, 31, 160, 0.05), transparent 50%),
+              var(--g33k-black) !important;
+}
+
+/* === TOP BAR / TAB STRIP: animated gradient sweep === */
+@keyframes g33k-titlebar-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+[class*="topBar"], [class*="titleBar"], [class*="tabBar"], [class*="bookmarkBar"],
+[class*="platform-win"] [class*="bar_"], [class*="frame_"] {
+  background: linear-gradient(90deg,
+    var(--g33k-black) 0%,
+    var(--g33k-magenta-deep) 20%,
+    var(--g33k-pink) 40%,
+    var(--g33k-magenta) 60%,
+    var(--g33k-magenta-deep) 80%,
+    var(--g33k-black) 100%) !important;
+  background-size: 300% 100% !important;
+  animation: g33k-titlebar-shift 10s ease-in-out infinite;
+}
+[class*="topBar"] *, [class*="titleBar"] *, [class*="tabBar"] *, [class*="bookmarkBar"] * {
+  color: var(--g33k-pink) !important;
+  text-shadow: 0 0 6px var(--g33k-pink), 0 0 16px var(--g33k-magenta) !important;
+}
+
+/* === SERVER LIST === */
+[class*="listItem_"] [class*="wrapper_"] {
+  transition: border-radius 0.15s ease, box-shadow 0.15s ease;
+}
+[class*="listItem_"]:hover [class*="wrapper_"] {
+  box-shadow: var(--g33k-glow);
+}
+[class*="selected_"] [class*="wrapper_"] {
+  box-shadow: 0 0 0 2px var(--g33k-pink), var(--g33k-glow) !important;
+}
+[class*="pill_"] {
+  background: var(--g33k-pink) !important;
+  box-shadow: var(--g33k-glow);
+}
+
+/* Server list text: guild icon fallback letters glow purple */
+[class*="guilds"] [class*="acronym"], [class*="listItem_"] [class*="acronym"] {
+  color: var(--g33k-purple) !important;
+  text-shadow: var(--g33k-purple-glow) !important;
+}
+
+/* Server list: a little more breathing room */
+[class*="guilds_"] {
+  width: 84px !important;
+}
+[class*="listItem_"] {
+  width: 56px !important;
+  height: 56px !important;
+}
+[class*="wrapper_"][class*="clickable_"] {
+  width: 56px !important;
+  height: 56px !important;
+}
+
+/* === CHANNEL LIST === */
+[class*="containerDefault_"]:hover {
+  background-color: rgba(255, 31, 160, 0.1) !important;
+}
+[class*="containerSelected_"] {
+  background: linear-gradient(90deg, rgba(255, 31, 160, 0.25), rgba(57, 255, 20, 0.05)) !important;
+  border-left: 3px solid var(--g33k-pink);
+}
+
+/* Channel & category names: plain font, purple glow (overrides the Creepster/pink heading rule above via higher specificity) */
+[class*="containerDefault_"] [class*="name_"], [class*="containerSelected_"] [class*="name_"],
+[class*="containerDefault_"] [class*="title_"], [class*="containerSelected_"] [class*="title_"],
+[class*="sidebar_"] [class*="name_"] {
+  font-family: 'Poppins', 'gg sans', sans-serif !important;
+  color: var(--g33k-purple) !important;
+  text-shadow: var(--g33k-purple-glow) !important;
+}
+
+/* === MEMBER LIST: names glow in their own role color === */
+[class*="members_"] [class*="username_"], [class*="member_"] [class*="username_"],
+[class*="members_"] [class*="name_"] {
+  text-shadow: 0 0 5px currentColor, 0 0 12px currentColor !important;
+}
+
+/* === MESSAGES === */
+[class*="message_"]:hover {
+  background: var(--background-message-hover) !important;
+}
+[class*="mentioned_"] {
+  background: linear-gradient(90deg, rgba(255, 31, 160, 0.18), transparent) !important;
+  border-left: 2px solid var(--g33k-pink) !important;
+}
+
+/* === BUTTONS === */
+[class*="button_"][class*="colorBrand"], .lookFilled.colorBrand {
+  background: linear-gradient(135deg, var(--g33k-pink), var(--g33k-magenta-deep)) !important;
+  border: none !important;
+  box-shadow: var(--g33k-glow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+[class*="button_"][class*="colorBrand"]:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 0 10px var(--g33k-pink), 0 0 22px var(--g33k-magenta);
+}
+
+/* === CHAT INPUT BOX === */
+[class*="channelTextArea"] {
+  border: 1px solid var(--g33k-magenta-deep) !important;
+  box-shadow: 0 0 8px rgba(255, 31, 160, 0.15);
+}
+[class*="channelTextArea"]:focus-within {
+  border: 1px solid var(--g33k-pink) !important;
+  box-shadow: var(--g33k-glow);
+}
+
+/* === STATUS INDICATORS -> hot pink glow instead of default green/etc for "online" === */
+[class*="pointer_"] svg[fill="#23a55a"] path,
+svg[class*="online"] {
+  filter: drop-shadow(0 0 3px var(--g33k-pink));
+}
+
+/* === SCROLLBARS === */
+* {
+  scrollbar-color: var(--g33k-magenta) var(--g33k-black);
+}
+
+/* === LINKS === */
+a, [class*="anchor_"] {
+  color: var(--g33k-pink-bright) !important;
+  text-decoration: none !important;
+}
+a:hover, [class*="anchor_"]:hover {
+  text-shadow: var(--g33k-glow);
+  text-decoration: underline !important;
+}
+
+/* === CODE BLOCKS: witchy terminal vibe === */
+code, pre {
+  background: #1c0616 !important;
+  border: 1px solid var(--g33k-magenta-deep) !important;
+  color: var(--g33k-pink-bright) !important;
+}
+
+/* === LOADING SPINNER RECOLOR === */
+svg[class*="spinner"] circle {
+  stroke: var(--g33k-pink) !important;
+}
+
+/* === PROFILE POPOUT BANNER GLOW === */
+[class*="userInfoSection"] {
+  box-shadow: inset 0 0 30px rgba(57, 255, 20, 0.15);
+}
+
+/* === EMOJI/STICKER PICKER TABS === */
+[class*="tab_"][aria-selected="true"] {
+  border-bottom: 2px solid var(--g33k-pink) !important;
+}
+
+/* === GLITTERY UNREAD BADGES === */
+@keyframes g33k-badge-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes g33k-glitter-twinkle {
+  0%, 100% { opacity: 0; }
+  8%  { opacity: 1; }
+  16% { opacity: 0; }
+  32% { opacity: 1; }
+  40% { opacity: 0; }
+  58% { opacity: 1; }
+  66% { opacity: 0; }
+  84% { opacity: 1; }
+  92% { opacity: 0; }
+}
+
+[class*="numberBadge"], [class*="mentionsBadge"], [class*="badge_"] {
+  position: relative;
+  overflow: visible !important;
+  background: linear-gradient(135deg, var(--g33k-pink-bright), var(--g33k-magenta), var(--g33k-pink)) !important;
+  background-size: 220% 220% !important;
+  animation: g33k-badge-shimmer 2.4s ease-in-out infinite;
+  box-shadow: 0 0 6px var(--g33k-pink), 0 0 14px var(--g33k-magenta);
+}
+[class*="numberBadge"]::after, [class*="mentionsBadge"]::after, [class*="badge_"]::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 15% 25%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 75% 15%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 35% 75%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 85% 70%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 55% 45%, #fff 0 1px, transparent 1.5px),
+    radial-gradient(circle at 10% 60%, #fff 0 1px, transparent 1.5px);
+  animation: g33k-glitter-twinkle 1.8s steps(1) infinite;
+}
+
+/* Server-list unread indicator pill: same shimmer + glitter treatment */
+[class*="pill_"] {
+  overflow: visible !important;
+  background: linear-gradient(135deg, var(--g33k-pink-bright), var(--g33k-pink), var(--g33k-magenta)) !important;
+  background-size: 220% 220% !important;
+  animation: g33k-badge-shimmer 2.4s ease-in-out infinite;
+}

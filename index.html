@@ -74,6 +74,7 @@
   .swatch.pink { background: linear-gradient(90deg, var(--pink), var(--magenta)); box-shadow: 0 0 12px var(--pink); }
   .swatch.green { background: linear-gradient(90deg, var(--green), var(--purple)); box-shadow: 0 0 12px var(--green); }
   .swatch.red { background: linear-gradient(90deg, var(--red), #4d0000); box-shadow: 0 0 12px var(--red); }
+  .swatch.pinkgreen { background: linear-gradient(90deg, var(--pink), var(--green)); box-shadow: 0 0 12px var(--pink); }
   .card h2 {
     font-family: 'Creepster', cursive;
     letter-spacing: 1px;
@@ -83,6 +84,7 @@
   .card.pink h2 { color: var(--pink-bright); text-shadow: 0 0 6px var(--pink); }
   .card.green h2 { color: var(--green); text-shadow: 0 0 6px var(--green); }
   .card.red h2 { color: var(--red); text-shadow: 0 0 6px var(--red); }
+  .card.pinkgreen h2 { color: var(--pink-bright); text-shadow: 0 0 6px var(--pink), 0 0 14px var(--green); }
   .card p { color: #c9a8bd; font-size: 0.92rem; min-height: 3.6em; }
   .btn {
     display: inline-block;
@@ -99,9 +101,11 @@
   .card.pink .btn { background: linear-gradient(135deg, var(--pink), var(--magenta)); box-shadow: 0 0 8px var(--pink); }
   .card.green .btn { background: linear-gradient(135deg, var(--green), var(--purple)); box-shadow: 0 0 8px var(--green); color: #05130a;}
   .card.red .btn { background: linear-gradient(135deg, var(--red), #4d0000); box-shadow: 0 0 8px var(--red); }
+  .card.pinkgreen .btn { background: linear-gradient(135deg, var(--pink), var(--green)); box-shadow: 0 0 8px var(--pink); }
   .card.pink .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--magenta); }
   .card.green .btn:hover { box-shadow: 0 0 16px var(--green), 0 0 30px var(--purple); }
   .card.red .btn:hover { box-shadow: 0 0 16px var(--red); }
+  .card.pinkgreen .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--green); }
 
   section.install {
     background: var(--black-soft);
@@ -164,6 +168,13 @@
       <h2>Blood Coven</h2>
       <p>Blood red main color, and regular body text set to glowing black — a red halo around black text for that "shadow made visible" look.</p>
       <a class="btn" href="themes/blood-coven-red-black.theme.css" download>Download .theme.css</a>
+    </div>
+
+    <div class="card pinkgreen">
+      <div class="swatch pinkgreen"></div>
+      <h2>Static Shock</h2>
+      <p>Hot pink as the main color with neon green accents throughout — same black background, same glow effects, just a punchier two-tone combo.</p>
+      <a class="btn" href="themes/pink-neon-static.theme.css" download>Download .theme.css</a>
     </div>
 
   </div>
