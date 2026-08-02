@@ -139,15 +139,17 @@ a, button, [role="button"], [class*="clickable"], [class*="cursorPointer"],
   text-shadow: var(--g33k-purple-glow) !important;
 }
 
-/* Server list: a little more breathing room */
+/* Server list: a little more breathing room (scoped to the guild list itself,
+   since Discord reuses "listItem_" for channel/thread rows too -- an unscoped
+   version of this rule was force-squishing the channel list into tiny boxes) */
 [class*="guilds_"] {
   width: 84px !important;
 }
-[class*="listItem_"] {
+[class*="guilds_"] [class*="listItem_"] {
   width: 56px !important;
   height: 56px !important;
 }
-[class*="wrapper_"][class*="clickable_"] {
+[class*="guilds_"] [class*="wrapper_"][class*="clickable_"] {
   width: 56px !important;
   height: 56px !important;
 }
@@ -161,10 +163,16 @@ a, button, [role="button"], [class*="clickable"], [class*="cursorPointer"],
   border-left: 3px solid var(--g33k-pink);
 }
 
-/* Channel & category names: plain font, purple glow (overrides the Creepster/pink heading rule above via higher specificity) */
+/* Channel & category names: plain font, purple glow (overrides the Creepster/pink heading rule above via higher specificity).
+   Widened to also catch category headers, which use different wrapper classes than regular channel rows. */
 [class*="containerDefault_"] [class*="name_"], [class*="containerSelected_"] [class*="name_"],
 [class*="containerDefault_"] [class*="title_"], [class*="containerSelected_"] [class*="title_"],
-[class*="sidebar_"] [class*="name_"] {
+[class*="sidebar_"] [class*="name_"], [class*="sidebar_"] [class*="title_"],
+[class*="channel_"] [class*="name_"], [class*="channel_"] [class*="title_"],
+[class*="privateChannelsHeaderContainer_"], [class*="privateChannelsHeaderContainer_"] *,
+[class*="categoryHeader_"], [class*="categoryHeader_"] *,
+[role="button"][aria-expanded] [class*="title_"], [role="button"][aria-expanded] [class*="name_"],
+#channels [class*="title_"], #channels [class*="name_"] {
   font-family: 'Poppins', 'gg sans', sans-serif !important;
   color: var(--g33k-purple) !important;
   text-shadow: var(--g33k-purple-glow) !important;
