@@ -1,0 +1,787 @@
+/**
+ * @name Drag0n Flame Garden
+ * @author BabyyBATxoxo
+ * @version 1.0.0
+ * @description Hot pink dragon, bamboo, and flame theme for Equicord.
+ */
+
+/* =========================================================
+   🐉 DRAG0N FLAME GARDEN
+   ========================================================= */
+
+:root {
+    --dragon-black: #050205;
+    --dragon-deep: #0d030a;
+    --dragon-panel: rgba(20, 4, 15, 0.9);
+    --dragon-panel-soft: rgba(29, 7, 22, 0.82);
+
+    --dragon-pink: #ff1493;
+    --dragon-hot-pink: #ff3ebf;
+    --dragon-light-pink: #ff8edb;
+
+    --dragon-red: #ff253f;
+    --dragon-orange: #ff6a00;
+    --dragon-yellow: #ffd000;
+
+    --dragon-green: #39ff66;
+    --dragon-bamboo: #58d66d;
+    --dragon-dark-green: #176b35;
+
+    --dragon-white: #fff7fc;
+    --dragon-muted: #c7a6ba;
+
+    --dragon-radius: 14px;
+    --dragon-radius-small: 8px;
+
+    --dragon-glow:
+        0 0 7px rgba(255, 20, 147, 0.8),
+        0 0 18px rgba(255, 62, 191, 0.45);
+
+    --dragon-fire:
+        linear-gradient(
+            115deg,
+            #ff1493 0%,
+            #ff253f 24%,
+            #ff6a00 48%,
+            #ffd000 66%,
+            #ff3ebf 84%,
+            #ff1493 100%
+        );
+
+    --background-primary: rgba(14, 3, 11, 0.88);
+    --background-secondary: rgba(10, 2, 8, 0.94);
+    --background-secondary-alt: rgba(7, 1, 6, 0.98);
+    --background-tertiary: rgba(4, 1, 4, 0.98);
+    --background-floating: #13040f;
+
+    --background-modifier-hover: rgba(255, 20, 147, 0.13);
+    --background-modifier-active: rgba(255, 106, 0, 0.16);
+    --background-modifier-selected: rgba(255, 20, 147, 0.24);
+    --background-modifier-accent: rgba(88, 214, 109, 0.2);
+
+    --channeltextarea-background: rgba(17, 4, 13, 0.96);
+    --input-background: rgba(10, 2, 8, 0.96);
+    --modal-background: #13040f;
+    --modal-footer-background: #090207;
+
+    --header-primary: #ffffff;
+    --header-secondary: #ff8edb;
+    --text-normal: #fff7fc;
+    --text-muted: #c7a6ba;
+    --text-link: #58d66d;
+
+    --interactive-normal: #d9b8cd;
+    --interactive-hover: #ffffff;
+    --interactive-active: #ffffff;
+    --interactive-muted: #765f6e;
+
+    --brand-500: #ff1493;
+    --brand-560: #db087a;
+    --brand-experiment: #ff1493;
+    --brand-experiment-560: #db087a;
+
+    --status-positive: #39ff66;
+    --status-warning: #ffd000;
+    --status-danger: #ff253f;
+
+    --scrollbar-auto-thumb: #ff1493;
+    --scrollbar-auto-track: transparent;
+    --scrollbar-thin-thumb: #58d66d;
+    --scrollbar-thin-track: transparent;
+}
+
+/* =========================================================
+   🔥 BACKGROUND
+   ========================================================= */
+
+html,
+body,
+#app-mount {
+    background:
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(255, 20, 147, 0.3),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 84% 14%,
+            rgba(255, 106, 0, 0.2),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 74% 86%,
+            rgba(88, 214, 109, 0.12),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            #030103 0%,
+            #10030c 44%,
+            #1b0614 72%,
+            #050205 100%
+        ) !important;
+
+    background-attachment: fixed !important;
+}
+
+[class*="appMount_"],
+[class*="app_"],
+[class*="bg_"],
+[class*="layers_"],
+[class*="layer_"],
+[class*="base_"] {
+    background-color: transparent !important;
+}
+
+/* =========================================================
+   🔥 EMBERS
+   ========================================================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999998;
+    pointer-events: none;
+    opacity: 0.32;
+
+    background-image:
+        radial-gradient(circle, #ff6a00 0 1.4px, transparent 2px),
+        radial-gradient(circle, #ff1493 0 1.2px, transparent 1.9px),
+        radial-gradient(circle, #ffd000 0 1px, transparent 1.7px);
+
+    background-size:
+        150px 150px,
+        220px 220px,
+        310px 310px;
+
+    background-position:
+        20px 90px,
+        120px 30px,
+        240px 160px;
+
+    animation: dragon-embers 16s linear infinite;
+}
+
+@keyframes dragon-embers {
+    from {
+        transform: translateY(120px);
+    }
+
+    to {
+        transform: translateY(-160px);
+    }
+}
+
+/* =========================================================
+   🐉 FLOATING DRAGONS
+   ========================================================= */
+
+#app-mount::before {
+    content: "🐉";
+    position: fixed;
+    left: 7%;
+    top: 24%;
+    z-index: 999999;
+    pointer-events: none;
+    font-size: 34px;
+
+    filter:
+        drop-shadow(0 0 7px #ff1493)
+        drop-shadow(0 0 15px #ff6a00);
+
+    animation: dragon-fly-left 19s ease-in-out infinite;
+}
+
+#app-mount::after {
+    content: "🐲";
+    position: fixed;
+    right: 10%;
+    top: 18%;
+    z-index: 999999;
+    pointer-events: none;
+    font-size: 29px;
+
+    filter:
+        drop-shadow(0 0 7px #58d66d)
+        drop-shadow(0 0 15px #ff1493);
+
+    animation: dragon-fly-right 23s ease-in-out infinite;
+}
+
+@keyframes dragon-fly-left {
+    0% {
+        transform: translate(-120px, 150px) rotate(-8deg) scale(0.7);
+        opacity: 0;
+    }
+
+    18% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate(480px, -100px) rotate(10deg) scale(1.08);
+    }
+
+    100% {
+        transform: translate(1300px, 80px) rotate(-5deg) scale(0.72);
+        opacity: 0;
+    }
+}
+
+@keyframes dragon-fly-right {
+    0% {
+        transform: translate(120px, -40px) rotate(8deg) scale(0.65);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    55% {
+        transform: translate(-550px, 130px) rotate(-12deg) scale(1);
+    }
+
+    100% {
+        transform: translate(-1200px, -100px) rotate(9deg) scale(0.68);
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   🎍 BAMBOO SIDEBAR
+   ========================================================= */
+
+[class*="sidebar_"] {
+    background:
+        linear-gradient(
+            160deg,
+            rgba(9, 2, 7, 0.95),
+            rgba(24, 5, 18, 0.9)
+        ) !important;
+
+    border-right: 2px solid rgba(88, 214, 109, 0.42);
+}
+
+[class*="sidebar_"]::before {
+    content: "🎍 🐉 🎍 DRAG0N 🎍 🐉 🎍";
+    display: block;
+    padding: 8px 5px;
+
+    color: var(--dragon-light-pink);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(88, 214, 109, 0.18),
+            rgba(255, 20, 147, 0.25),
+            rgba(255, 106, 0, 0.18)
+        );
+
+    border-bottom: 1px solid rgba(88, 214, 109, 0.3);
+
+    text-shadow:
+        0 0 6px #ff1493,
+        0 0 12px #ff6a00;
+}
+
+/* =========================================================
+   🖤 MAIN PANELS
+   ========================================================= */
+
+[class*="chat_"] {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 2, 8, 0.8),
+            rgba(24, 5, 18, 0.74)
+        ) !important;
+}
+
+[class*="members_"],
+[class*="membersWrap_"] {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 1, 6, 0.86),
+            rgba(18, 4, 14, 0.8)
+        ) !important;
+
+    border-left: 1px solid rgba(255, 20, 147, 0.3);
+}
+
+[class*="sidebar_"],
+[class*="chat_"],
+[class*="members_"],
+[class*="membersWrap_"],
+[class*="panels_"],
+[class*="contentRegion_"],
+[class*="standardSidebarView_"] {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* =========================================================
+   💚 USER PANEL
+   ========================================================= */
+
+[class*="panels_"] {
+    margin: 6px;
+    overflow: hidden;
+
+    border: 1px solid rgba(88, 214, 109, 0.45);
+    border-radius: var(--dragon-radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(26, 6, 20, 0.97),
+            rgba(8, 2, 6, 0.97)
+        ) !important;
+
+    box-shadow:
+        0 0 8px rgba(88, 214, 109, 0.34),
+        0 0 18px rgba(255, 20, 147, 0.24);
+}
+
+/* =========================================================
+   🐉 SERVER LIST
+   ========================================================= */
+
+nav[aria-label*="Servers"],
+[class*="guilds_"] {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(4, 1, 3, 0.99),
+            rgba(14, 3, 10, 0.97)
+        ) !important;
+
+    border-right: 1px solid rgba(255, 20, 147, 0.32);
+}
+
+[class*="guilds_"] [class*="wrapper_"] {
+    transition:
+        transform 170ms ease,
+        filter 170ms ease;
+}
+
+[class*="guilds_"] [class*="wrapper_"]:hover {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(0 0 6px #ff1493)
+        drop-shadow(0 0 13px rgba(255, 106, 0, 0.65));
+}
+
+[class*="guilds_"] [class*="pill_"] span {
+    background:
+        linear-gradient(
+            to bottom,
+            var(--dragon-green),
+            var(--dragon-pink),
+            var(--dragon-orange)
+        ) !important;
+
+    box-shadow:
+        0 0 7px var(--dragon-pink),
+        0 0 13px rgba(255, 106, 0, 0.55);
+}
+
+/* Dragon home icon */
+
+[class*="childWrapper_"] {
+    color: transparent !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(88, 214, 109, 0.28),
+            rgba(255, 20, 147, 0.35)
+        ) !important;
+
+    border: 1px solid rgba(255, 62, 191, 0.48);
+}
+
+[class*="childWrapper_"]::before {
+    content: "🐉";
+    color: white;
+    font-size: 25px;
+}
+
+[class*="childWrapper_"] svg {
+    display: none;
+}
+
+[class*="childWrapper_"]:hover {
+    background: var(--dragon-fire) !important;
+    background-size: 300% 300% !important;
+
+    box-shadow: var(--dragon-glow);
+
+    animation: dragon-fire-shift 4s linear infinite;
+}
+
+/* =========================================================
+   🎍 CHANNELS
+   ========================================================= */
+
+[data-list-item-id^="channels___"] {
+    margin: 2px 6px;
+    border-radius: var(--dragon-radius-small);
+
+    transition:
+        transform 160ms ease,
+        background 160ms ease,
+        box-shadow 160ms ease;
+}
+
+[data-list-item-id^="channels___"]:hover {
+    transform: translateX(4px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(88, 214, 109, 0.13),
+            rgba(255, 20, 147, 0.15)
+        ) !important;
+
+    box-shadow:
+        inset 3px 0 var(--dragon-bamboo),
+        0 0 9px rgba(88, 214, 109, 0.18);
+}
+
+[class*="modeSelected_"] [class*="link_"],
+[data-list-item-id^="channels___"][aria-selected="true"] {
+    color: #ffffff !important;
+
+    border-radius: var(--dragon-radius-small);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 20, 147, 0.34),
+            rgba(255, 106, 0, 0.15)
+        ) !important;
+
+    box-shadow:
+        inset 3px 0 var(--dragon-hot-pink),
+        0 0 8px rgba(255, 20, 147, 0.52);
+}
+
+[class*="containerDefault_"] [class*="name_"],
+[class*="containerDefault_"] [class*="overflow_"] {
+    color: var(--dragon-bamboo) !important;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+
+    text-shadow:
+        0 0 5px rgba(88, 214, 109, 0.55);
+}
+
+[class*="containerDefault_"] [class*="name_"]::before {
+    content: "🎍 ";
+}
+
+[class*="unread_"] {
+    background: var(--dragon-hot-pink) !important;
+
+    box-shadow:
+        0 0 6px var(--dragon-pink),
+        0 0 12px rgba(255, 20, 147, 0.7);
+}
+
+/* =========================================================
+   💬 MESSAGES
+   ========================================================= */
+
+[class*="message_"] {
+    margin: 2px 8px;
+    border-radius: 10px;
+
+    transition:
+        transform 150ms ease,
+        background 150ms ease,
+        box-shadow 150ms ease;
+}
+
+[class*="message_"]:hover {
+    transform: translateX(2px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 20, 147, 0.09),
+            rgba(255, 106, 0, 0.04)
+        ) !important;
+
+    box-shadow:
+        inset 3px 0 rgba(255, 62, 191, 0.65);
+}
+
+[class*="mentioned_"] {
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(88, 214, 109, 0.15),
+            rgba(255, 20, 147, 0.07)
+        ) !important;
+
+    box-shadow:
+        inset 3px 0 var(--dragon-green),
+        0 0 12px rgba(88, 214, 109, 0.22);
+}
+
+[class*="mentioned_"]::before {
+    background: var(--dragon-green) !important;
+}
+
+[class*="username_"] {
+    font-weight: 700;
+    text-shadow: 0 0 5px currentColor;
+}
+
+[class*="markup_"] a,
+a[class*="anchor_"] {
+    color: var(--dragon-bamboo) !important;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 5px rgba(88, 214, 109, 0.45);
+}
+
+/* =========================================================
+   🔥 MESSAGE BOX
+   ========================================================= */
+
+[class*="channelTextArea_"],
+[class*="scrollableContainer_"] {
+    border: 1px solid rgba(255, 20, 147, 0.42);
+    border-radius: var(--dragon-radius) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 1, 6, 0.98),
+            rgba(23, 5, 17, 0.97)
+        ) !important;
+
+    box-shadow:
+        0 0 9px rgba(255, 20, 147, 0.22),
+        inset 0 0 17px rgba(255, 106, 0, 0.03);
+}
+
+[class*="channelTextArea_"]:focus-within,
+[class*="scrollableContainer_"]:focus-within {
+    border-color: var(--dragon-orange);
+
+    box-shadow:
+        0 0 7px rgba(255, 106, 0, 0.6),
+        0 0 17px rgba(255, 20, 147, 0.3);
+}
+
+[class*="typing_"] {
+    color: var(--dragon-green) !important;
+
+    text-shadow:
+        0 0 6px rgba(88, 214, 109, 0.55);
+}
+
+/* =========================================================
+   🪟 MENUS AND POPOUTS
+   ========================================================= */
+
+[class*="menu_"],
+[class*="popout_"],
+[class*="userPopoutOuter_"],
+[class*="messagesPopoutWrap_"],
+[class*="autocomplete_"],
+[class*="modal_"] {
+    border: 1px solid rgba(255, 20, 147, 0.4) !important;
+    border-radius: var(--dragon-radius) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25, 6, 19, 0.99),
+            rgba(7, 1, 6, 0.99)
+        ) !important;
+
+    box-shadow:
+        0 0 9px rgba(255, 20, 147, 0.35),
+        0 0 23px rgba(255, 106, 0, 0.15) !important;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+[class*="menu_"] [class*="item_"] {
+    margin: 2px 4px;
+    border-radius: 7px;
+}
+
+[class*="menu_"] [class*="item_"]:hover,
+[class*="menu_"] [class*="focused_"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 20, 147, 0.36),
+            rgba(255, 106, 0, 0.16)
+        ) !important;
+}
+
+/* =========================================================
+   🔥 BUTTONS
+   ========================================================= */
+
+button[class*="lookFilled_"][class*="colorBrand_"],
+button[class*="lookFilled_"][class*="colorGreen_"] {
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+    background: var(--dragon-fire) !important;
+    background-size: 300% 300% !important;
+
+    box-shadow:
+        0 0 8px rgba(255, 20, 147, 0.65),
+        0 0 17px rgba(255, 106, 0, 0.32);
+
+    animation: dragon-fire-shift 5s linear infinite;
+}
+
+button[class*="lookFilled_"]:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+
+    box-shadow:
+        0 0 10px rgba(255, 20, 147, 0.85),
+        0 0 22px rgba(255, 106, 0, 0.52);
+}
+
+@keyframes dragon-fire-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* =========================================================
+   🎙️ VOICE GLOW
+   ========================================================= */
+
+[class*="speaking_"],
+[class*="avatarSpeaking_"] {
+    box-shadow:
+        0 0 0 2px var(--dragon-green),
+        0 0 7px var(--dragon-green),
+        0 0 17px rgba(88, 214, 109, 0.58) !important;
+
+    animation: dragon-speaking 1.3s ease-in-out infinite;
+}
+
+@keyframes dragon-speaking {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.3);
+    }
+}
+
+/* =========================================================
+   📜 SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 2px solid transparent !important;
+    border-radius: 999px !important;
+
+    background:
+        linear-gradient(
+            var(--dragon-hot-pink),
+            var(--dragon-orange),
+            var(--dragon-bamboo)
+        ) padding-box !important;
+
+    box-shadow:
+        0 0 6px rgba(255, 20, 147, 0.5);
+}
+
+/* =========================================================
+   🐉 DRAG0N WATERMARK
+   ========================================================= */
+
+body::after {
+    content: "🐉 DRAG0N 🔥 🎍";
+    position: fixed;
+    right: 18px;
+    bottom: 8px;
+    z-index: 9999999;
+    pointer-events: none;
+
+    padding: 4px 9px;
+
+    color: var(--dragon-light-pink);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.4px;
+
+    border: 1px solid rgba(88, 214, 109, 0.4);
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(88, 214, 109, 0.16),
+            rgba(255, 20, 147, 0.25),
+            rgba(255, 106, 0, 0.18)
+        );
+
+    text-shadow:
+        0 0 6px #ff1493,
+        0 0 12px #ff6a00;
+
+    box-shadow:
+        0 0 7px rgba(255, 20, 147, 0.32),
+        0 0 14px rgba(88, 214, 109, 0.15);
+}
+
+/* =========================================================
+   ♿ REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
