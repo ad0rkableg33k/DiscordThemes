@@ -1,0 +1,247 @@
+/**
+ * @name Amethyst Wyrm
+ * @description Purple/teal/magenta dragon theme. Custom dragon cursor, typewriter-and-scrawl fonts.
+ * @author ad0rkableg33k
+ * @version 1.2.0
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Give+You+Glory&family=Gloria+Hallelujah&family=Shadows+Into+Light+Two&family=Chathura:wght@400;700&display=swap");
+
+/* ---------- dragon cursor (embedded, 32x32, no hosting needed) ---------- */
+:root {
+  --dragon-cursor-img: url("data:image/png;base64,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");
+  --dragon-hot-x: 2;
+  --dragon-hot-y: 2;
+
+  /* second dragon: links + loading */
+  --dragon-alt-img: url("data:image/png;base64,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");
+  --dragon-alt-x: 0;
+  --dragon-alt-y: 0;
+}
+
+/* ---------- palette (pulled from the dragon) ---------- */
+:root {
+  --wyrm-void:      #120820;
+  --wyrm-abyss:     #1a0b2b;
+  --wyrm-night:     #231039;
+  --wyrm-dusk:      #2e164a;
+  --wyrm-scale:     #3d1d63;
+  --wyrm-violet:    #7b2fa8;
+  --wyrm-orchid:    #b43cc8;
+  --wyrm-magenta:   #d44fd0;
+  --wyrm-teal:      #1fb5b0;
+  --wyrm-cyan:      #4fe0d8;
+  --wyrm-mist:      #e6d9f2;
+  --wyrm-dim:       #a791bd;
+  --wyrm-glow:      0 0 8px rgba(79, 224, 216, 0.55);
+}
+
+/* ---------- discord variable overrides ---------- */
+.theme-dark, .theme-light, :root {
+  --background-base-lowest:  var(--wyrm-void);
+  --background-base-lower:   var(--wyrm-abyss);
+  --background-base-low:     var(--wyrm-night);
+  --background-surface-high: var(--wyrm-dusk);
+  --background-surface-higher: var(--wyrm-scale);
+  --background-surface-highest: var(--wyrm-scale);
+
+  --background-primary:           var(--wyrm-night);
+  --background-secondary:         var(--wyrm-abyss);
+  --background-secondary-alt:     var(--wyrm-void);
+  --background-tertiary:          var(--wyrm-void);
+  --background-floating:          var(--wyrm-dusk);
+  --background-modifier-hover:    rgba(180, 60, 200, 0.12);
+  --background-modifier-selected: rgba(31, 181, 176, 0.18);
+  --background-modifier-active:   rgba(180, 60, 200, 0.22);
+  --chat-background-default:      var(--wyrm-night);
+  --channeltextarea-background:   var(--wyrm-dusk);
+
+  --brand-500: var(--wyrm-violet);
+  --brand-560: var(--wyrm-orchid);
+  --brand-600: var(--wyrm-magenta);
+  --text-brand: var(--wyrm-cyan);
+  --control-brand-foreground: var(--wyrm-violet);
+  --control-brand-foreground-new: var(--wyrm-violet);
+
+  --header-primary:   var(--wyrm-mist);
+  --header-secondary: var(--wyrm-dim);
+  --text-normal:      var(--wyrm-mist);
+  --text-default:     var(--wyrm-mist);
+  --text-muted:       var(--wyrm-dim);
+  --text-link:        var(--wyrm-cyan);
+  --interactive-normal: var(--wyrm-dim);
+  --interactive-hover:  var(--wyrm-cyan);
+  --interactive-active: var(--wyrm-magenta);
+
+  --mention-foreground: var(--wyrm-cyan);
+  --mention-background: rgba(31, 181, 176, 0.18);
+  --scrollbar-thin-thumb: var(--wyrm-violet);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: var(--wyrm-violet);
+  --scrollbar-auto-track: var(--wyrm-abyss);
+}
+
+/* ---------- fonts ---------- */
+:root {
+  --font-primary: "Special Elite", "Courier New", monospace;
+  --font-display: "Special Elite", "Courier New", monospace;
+  --font-headline: "Special Elite", "Courier New", monospace;
+  --font-h1: "Give You Glory", cursive;
+  --font-h2: "Gloria Hallelujah", cursive;
+  --font-h3: "Shadows Into Light Two", cursive;
+  --font-sub: "Chathura", sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary) !important;
+}
+
+/* headers in chat: # / ## / ### */
+[class*="markup_"] h1,
+[class*="markup_"] [class*="heading-xl"] {
+  font-family: var(--font-h1) !important;
+  color: var(--wyrm-cyan);
+  text-shadow: var(--wyrm-glow);
+  letter-spacing: 0.02em;
+}
+
+[class*="markup_"] h2,
+[class*="markup_"] [class*="heading-lg"] {
+  font-family: var(--font-h2) !important;
+  color: var(--wyrm-magenta);
+}
+
+[class*="markup_"] h3,
+[class*="markup_"] [class*="heading-md"] {
+  font-family: var(--font-h3) !important;
+  color: var(--wyrm-orchid);
+}
+
+/* subtext: -# text */
+[class*="markup_"] [class*="subtext"],
+[class*="markup_"] small,
+[class*="subtext_"] {
+  font-family: var(--font-sub) !important;
+  font-size: 1.15em;
+  color: var(--wyrm-dim);
+  letter-spacing: 0.03em;
+}
+
+/* keep code readable */
+code,
+pre,
+[class*="markup_"] code,
+[class*="hljs"] {
+  font-family: Consolas, "Fira Code", "Courier New", monospace !important;
+}
+
+/* ---------- cursor ---------- */
+html, body, * {
+  cursor: var(--dragon-cursor-img) var(--dragon-hot-x) var(--dragon-hot-y), auto;
+}
+
+/* links / clickables: second dragon */
+a, a *, button, button *, [role="button"], [role="button"] *, [role="tab"], [role="switch"], [role="menuitem"],
+[class*="clickable"], [class*="interactive"],
+[class*="channel_"] a, [class*="listItem"] {
+  cursor: var(--dragon-alt-img) var(--dragon-alt-x) var(--dragon-alt-y), pointer !important;
+}
+
+/* loading: second dragon too */
+[class*="loading"], [class*="loading"] *,
+[class*="spinner"], [class*="spinner"] *,
+[class*="Spinner"], [class*="Spinner"] *,
+[aria-busy="true"], [aria-busy="true"] * {
+  cursor: var(--dragon-alt-img) var(--dragon-alt-x) var(--dragon-alt-y), progress !important;
+}
+
+input, textarea, [contenteditable="true"], [role="textbox"] {
+  cursor: text !important;
+}
+
+/* ---------- surfaces ---------- */
+[class*="sidebar_"],
+[class*="guilds_"],
+nav[class*="wrapper_"] {
+  background: linear-gradient(180deg, var(--wyrm-abyss), var(--wyrm-void)) !important;
+}
+
+[class*="chatContent_"],
+[class*="chat_"] {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(180, 60, 200, 0.10), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(31, 181, 176, 0.08), transparent 55%),
+    var(--wyrm-night) !important;
+}
+
+[class*="channelTextArea_"] {
+  border: 1px solid rgba(123, 47, 168, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(180, 60, 200, 0.18);
+}
+[class*="channelTextArea_"]:focus-within {
+  border-color: var(--wyrm-teal);
+  box-shadow: 0 0 14px rgba(31, 181, 176, 0.35);
+}
+
+/* selected / hovered channels */
+[class*="modeSelected_"] {
+  background: linear-gradient(90deg, rgba(123, 47, 168, 0.45), rgba(31, 181, 176, 0.18)) !important;
+  border-left: 2px solid var(--wyrm-cyan);
+}
+
+/* buttons */
+[class*="lookFilled_"][class*="colorBrand_"] {
+  background: linear-gradient(135deg, var(--wyrm-violet), var(--wyrm-orchid)) !important;
+  color: #fff !important;
+  border: none;
+}
+[class*="lookFilled_"][class*="colorBrand_"]:hover {
+  background: linear-gradient(135deg, var(--wyrm-orchid), var(--wyrm-teal)) !important;
+  box-shadow: var(--wyrm-glow);
+}
+
+/* guild icon active pill */
+[class*="item_"] > [class*="pill_"] span {
+  background: var(--wyrm-cyan) !important;
+  box-shadow: var(--wyrm-glow);
+}
+
+/* mentions */
+[class*="mention"] {
+  border-radius: 4px;
+}
+
+/* selection + scrollbars */
+::selection {
+  background: rgba(212, 79, 208, 0.45);
+  color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--wyrm-violet), var(--wyrm-teal)) !important;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+/* popouts, menus, modals */
+[class*="menu_"],
+[class*="popout_"],
+[class*="modal_"],
+[class*="layer_"] [class*="container_"][class*="theme"] {
+  border: 1px solid rgba(123, 47, 168, 0.6);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55), 0 0 18px rgba(180, 60, 200, 0.15);
+}
+
+/* dividers */
+[class*="divider_"] {
+  border-color: rgba(123, 47, 168, 0.5) !important;
+}
