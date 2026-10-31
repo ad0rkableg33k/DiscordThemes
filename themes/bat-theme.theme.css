@@ -1,0 +1,431 @@
+/**
+ * @name Bat Cave
+ * @description Bright purple, neon green and black. Bat cursors with a neon glow, drippy blood headers, a night sky with a moon and stars, bats everywhere.
+ * @author ad0rkableg33k
+ * @version 2.0.1
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&family=Nosifer&display=swap");
+
+/* ---------- palette ---------- */
+:root {
+  --bat-black:     #030207;
+  --bat-void:      #07040d;
+  --bat-night:     #0b0614;
+  --bat-panel:     #140a24;
+  --bat-panel-hi:  #1d0f35;
+  --bat-purple:    #b026ff;   /* bright purple */
+  --bat-purple-hi: #d27bff;
+  --bat-purple-lo: #6a12a0;
+  --bat-green:     #39ff14;   /* neon green */
+  --bat-green-lo:  #1fae0a;
+  --bat-text:      #f1e9ff;
+  --bat-muted:     #b79bd9;
+  --bat-glow-g:    0 0 8px rgba(57, 255, 20, 0.65);
+  --bat-glow-p:    0 0 10px rgba(176, 38, 255, 0.65);
+}
+
+/* ---------- bat emoji backgrounds (SVG tiles) ---------- */
+:root {
+  --bat-pattern-chat:    url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27300%27%20height%3D%27300%27%20viewBox%3D%270%200%20300%20300%27%3E%3Cg%20font-family%3D%27Segoe%20UI%20Emoji%2CApple%20Color%20Emoji%2CNoto%20Color%20Emoji%2Csans-serif%27%3E%3Ctext%20x%3D%2724%27%20y%3D%2760%27%20font-size%3D%2734%27%20opacity%3D%270.15%27%20transform%3D%27rotate%28-14%2024%2060%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27160%27%20y%3D%2736%27%20font-size%3D%2726%27%20opacity%3D%270.15%27%20transform%3D%27rotate%2818%20160%2036%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27250%27%20y%3D%27120%27%20font-size%3D%2742%27%20opacity%3D%270.15%27%20transform%3D%27rotate%2810%20250%20120%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2778%27%20y%3D%27170%27%20font-size%3D%2730%27%20opacity%3D%270.15%27%20transform%3D%27rotate%2824%2078%20170%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27170%27%20y%3D%27226%27%20font-size%3D%2736%27%20opacity%3D%270.15%27%20transform%3D%27rotate%28-20%20170%20226%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2714%27%20y%3D%27270%27%20font-size%3D%2724%27%20opacity%3D%270.15%27%20transform%3D%27rotate%286%2014%20270%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27262%27%20y%3D%27274%27%20font-size%3D%2728%27%20opacity%3D%270.15%27%20transform%3D%27rotate%28-28%20262%20274%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27118%27%20y%3D%27110%27%20font-size%3D%2720%27%20opacity%3D%270.15%27%20transform%3D%27rotate%28-8%20118%20110%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --bat-pattern-side:    url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27150%27%20height%3D%27150%27%20viewBox%3D%270%200%20150%20150%27%3E%3Cg%20font-family%3D%27Segoe%20UI%20Emoji%2CApple%20Color%20Emoji%2CNoto%20Color%20Emoji%2Csans-serif%27%3E%3Ctext%20x%3D%2714%27%20y%3D%2738%27%20font-size%3D%2722%27%20opacity%3D%270.13%27%20transform%3D%27rotate%28-12%2014%2038%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2792%27%20y%3D%2726%27%20font-size%3D%2716%27%20opacity%3D%270.13%27%20transform%3D%27rotate%2816%2092%2026%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2764%27%20y%3D%2792%27%20font-size%3D%2720%27%20opacity%3D%270.13%27%20transform%3D%27rotate%2810%2064%2092%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%27120%27%20y%3D%27134%27%20font-size%3D%2718%27%20opacity%3D%270.13%27%20transform%3D%27rotate%28-18%20120%20134%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2718%27%20y%3D%27128%27%20font-size%3D%2716%27%20opacity%3D%270.13%27%20transform%3D%27rotate%288%2018%20128%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  --bat-pattern-guilds:  url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2772%27%20height%3D%27110%27%20viewBox%3D%270%200%2072%20110%27%3E%3Cg%20font-family%3D%27Segoe%20UI%20Emoji%2CApple%20Color%20Emoji%2CNoto%20Color%20Emoji%2Csans-serif%27%3E%3Ctext%20x%3D%278%27%20y%3D%2734%27%20font-size%3D%2726%27%20opacity%3D%270.22%27%20transform%3D%27rotate%28-12%208%2034%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3Ctext%20x%3D%2740%27%20y%3D%2788%27%20font-size%3D%2722%27%20opacity%3D%270.22%27%20transform%3D%27rotate%2814%2040%2088%29%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+}
+
+/* ---------- night sky (top of the window) ---------- */
+:root {
+  --bat-sky-stars-a: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27560%27%20height%3D%27150%27%20viewBox%3D%270%200%20560%20150%27%3E%3Ccircle%20cx%3D%27182.8%27%20cy%3D%279.9%27%20r%3D%270.6%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.48%27%2F%3E%3Ccircle%20cx%3D%27325.7%27%20cy%3D%27125.5%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.47%27%2F%3E%3Cpolygon%20points%3D%2754.1%2C33.5%2055.3%2C37.9%2059.8%2C39.2%2055.3%2C40.4%2054.1%2C44.9%2052.8%2C40.4%2048.4%2C39.2%2052.8%2C37.9%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.52%27%2F%3E%3Cpolygon%20points%3D%27527.1%2C56.7%20528.3%2C60.9%20532.6%2C62.1%20528.3%2C63.3%20527.1%2C67.6%20525.9%2C63.3%20521.7%2C62.1%20525.9%2C60.9%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.48%27%2F%3E%3Ccircle%20cx%3D%2777.5%27%20cy%3D%2738.4%27%20r%3D%271.4%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.51%27%2F%3E%3Cpolygon%20points%3D%27103.8%2C56.9%20105.1%2C61.6%20109.8%2C62.9%20105.1%2C64.2%20103.8%2C68.9%20102.4%2C64.2%2097.8%2C62.9%20102.4%2C61.6%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.55%27%2F%3E%3Ccircle%20cx%3D%27315.5%27%20cy%3D%2769.2%27%20r%3D%270.8%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.82%27%2F%3E%3Cpolygon%20points%3D%27327.2%2C36.9%20328.6%2C41.8%20333.5%2C43.2%20328.6%2C44.5%20327.2%2C49.4%20325.9%2C44.5%20321.0%2C43.2%20325.9%2C41.8%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.59%27%2F%3E%3Ccircle%20cx%3D%2749.2%27%20cy%3D%2723.8%27%20r%3D%270.8%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.93%27%2F%3E%3Ccircle%20cx%3D%27545.1%27%20cy%3D%277.7%27%20r%3D%271.5%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.54%27%2F%3E%3Ccircle%20cx%3D%27236.8%27%20cy%3D%27136.9%27%20r%3D%271.5%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.87%27%2F%3E%3Ccircle%20cx%3D%27177.2%27%20cy%3D%2782.7%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.72%27%2F%3E%3Cpolygon%20points%3D%2755.7%2C14.6%2057.0%2C19.2%2061.6%2C20.5%2057.0%2C21.8%2055.7%2C26.5%2054.4%2C21.8%2049.7%2C20.5%2054.4%2C19.2%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.82%27%2F%3E%3Ccircle%20cx%3D%27361.2%27%20cy%3D%27143.9%27%20r%3D%271.2%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.61%27%2F%3E%3Ccircle%20cx%3D%2716.5%27%20cy%3D%2744.4%27%20r%3D%270.7%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.79%27%2F%3E%3Ccircle%20cx%3D%27162.7%27%20cy%3D%2790.7%27%20r%3D%270.6%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.67%27%2F%3E%3Ccircle%20cx%3D%27252.0%27%20cy%3D%2757.7%27%20r%3D%270.8%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.9%27%2F%3E%3Cpolygon%20points%3D%27233.2%2C26.5%20234.1%2C29.7%20237.4%2C30.6%20234.1%2C31.5%20233.2%2C34.8%20232.3%2C31.5%20229.1%2C30.6%20232.3%2C29.7%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.98%27%2F%3E%3Cpolygon%20points%3D%27132.0%2C12.4%20133.0%2C15.9%20136.5%2C16.9%20133.0%2C17.9%20132.0%2C21.4%20131.1%2C17.9%20127.6%2C16.9%20131.1%2C15.9%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.91%27%2F%3E%3Ccircle%20cx%3D%2784.4%27%20cy%3D%2755.3%27%20r%3D%271.3%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.76%27%2F%3E%3Ccircle%20cx%3D%27288.6%27%20cy%3D%2768.9%27%20r%3D%271.5%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.86%27%2F%3E%3Ccircle%20cx%3D%27529.4%27%20cy%3D%2780.0%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.67%27%2F%3E%3Ccircle%20cx%3D%27354.1%27%20cy%3D%274.7%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.99%27%2F%3E%3Cpolygon%20points%3D%27335.6%2C1.9%20336.7%2C5.7%20340.4%2C6.7%20336.7%2C7.8%20335.6%2C11.5%20334.6%2C7.8%20330.8%2C6.7%20334.6%2C5.7%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.53%27%2F%3E%3Ccircle%20cx%3D%2718.1%27%20cy%3D%27117.9%27%20r%3D%271.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.66%27%2F%3E%3Ccircle%20cx%3D%27336.5%27%20cy%3D%2746.2%27%20r%3D%271.0%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.92%27%2F%3E%3Ccircle%20cx%3D%27271.1%27%20cy%3D%275.8%27%20r%3D%271.0%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.86%27%2F%3E%3Ccircle%20cx%3D%27386.0%27%20cy%3D%2752.5%27%20r%3D%270.7%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.97%27%2F%3E%3Ccircle%20cx%3D%27303.8%27%20cy%3D%273.4%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.61%27%2F%3E%3Cpolygon%20points%3D%27470.7%2C47.4%20471.9%2C51.6%20476.1%2C52.8%20471.9%2C54.0%20470.7%2C58.2%20469.5%2C54.0%20465.3%2C52.8%20469.5%2C51.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.65%27%2F%3E%3Ccircle%20cx%3D%27281.5%27%20cy%3D%2772.2%27%20r%3D%271.4%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.9%27%2F%3E%3Cpolygon%20points%3D%27449.0%2C101.2%20450.1%2C105.2%20454.2%2C106.4%20450.1%2C107.5%20449.0%2C111.6%20447.8%2C107.5%20443.7%2C106.4%20447.8%2C105.2%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.89%27%2F%3E%3Cpolygon%20points%3D%27407.5%2C137.5%20408.8%2C141.9%20413.1%2C143.1%20408.8%2C144.4%20407.5%2C148.8%20406.3%2C144.4%20401.9%2C143.1%20406.3%2C141.9%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.71%27%2F%3E%3Ccircle%20cx%3D%27194.0%27%20cy%3D%27104.4%27%20r%3D%270.9%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.99%27%2F%3E%3Ccircle%20cx%3D%27125.7%27%20cy%3D%2716.3%27%20r%3D%271.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.64%27%2F%3E%3Ccircle%20cx%3D%27340.9%27%20cy%3D%273.0%27%20r%3D%271.4%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.64%27%2F%3E%3Ccircle%20cx%3D%2770.2%27%20cy%3D%2734.4%27%20r%3D%270.7%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.86%27%2F%3E%3Ccircle%20cx%3D%27439.6%27%20cy%3D%2727.5%27%20r%3D%271.5%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.67%27%2F%3E%3Ccircle%20cx%3D%27404.1%27%20cy%3D%2711.4%27%20r%3D%271.0%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.47%27%2F%3E%3Ccircle%20cx%3D%27366.0%27%20cy%3D%2767.9%27%20r%3D%270.9%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.99%27%2F%3E%3Ccircle%20cx%3D%27306.9%27%20cy%3D%278.5%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.89%27%2F%3E%3Cpolygon%20points%3D%27417.7%2C4.7%20418.7%2C8.1%20422.1%2C9.1%20418.7%2C10.0%20417.7%2C13.5%20416.8%2C10.0%20413.3%2C9.1%20416.8%2C8.1%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.9%27%2F%3E%3Ccircle%20cx%3D%27165.7%27%20cy%3D%2717.6%27%20r%3D%271.4%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.63%27%2F%3E%3Ccircle%20cx%3D%2737.6%27%20cy%3D%2791.0%27%20r%3D%271.1%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.81%27%2F%3E%3Ccircle%20cx%3D%27460.6%27%20cy%3D%27118.8%27%20r%3D%270.5%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.74%27%2F%3E%3Cpolygon%20points%3D%27246.9%2C8.4%20247.8%2C11.5%20250.9%2C12.4%20247.8%2C13.3%20246.9%2C16.4%20246.1%2C13.3%20243.0%2C12.4%20246.1%2C11.5%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.88%27%2F%3E%3C%2Fsvg%3E");
+  --bat-sky-stars-b: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27640%27%20height%3D%27150%27%20viewBox%3D%270%200%20640%20150%27%3E%3Ccircle%20cx%3D%27108.2%27%20cy%3D%2781.7%27%20r%3D%271.6%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.6%27%2F%3E%3Cpolygon%20points%3D%27304.0%2C133.7%20304.7%2C136.4%20307.5%2C137.2%20304.7%2C138.0%20304.0%2C140.7%20303.2%2C138.0%20300.5%2C137.2%20303.2%2C136.4%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.73%27%2F%3E%3Ccircle%20cx%3D%27238.5%27%20cy%3D%2763.5%27%20r%3D%271.5%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.53%27%2F%3E%3Ccircle%20cx%3D%27442.6%27%20cy%3D%2740.9%27%20r%3D%271.0%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.87%27%2F%3E%3Ccircle%20cx%3D%27608.7%27%20cy%3D%2756.2%27%20r%3D%270.9%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.51%27%2F%3E%3Cpolygon%20points%3D%27101.8%2C102.2%20102.7%2C105.3%20105.9%2C106.2%20102.7%2C107.1%20101.8%2C110.3%20100.9%2C107.1%2097.8%2C106.2%20100.9%2C105.3%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.89%27%2F%3E%3Cpolygon%20points%3D%27464.4%2C29.5%20465.8%2C34.6%20470.9%2C36.1%20465.8%2C37.5%20464.4%2C42.6%20462.9%2C37.5%20457.9%2C36.1%20462.9%2C34.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.55%27%2F%3E%3Ccircle%20cx%3D%27152.4%27%20cy%3D%2798.8%27%20r%3D%271.2%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.82%27%2F%3E%3Ccircle%20cx%3D%27604.0%27%20cy%3D%27122.8%27%20r%3D%271.1%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.49%27%2F%3E%3Ccircle%20cx%3D%27249.2%27%20cy%3D%2728.5%27%20r%3D%270.9%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.94%27%2F%3E%3Cpolygon%20points%3D%27289.2%2C30.2%20290.1%2C33.2%20293.1%2C34.0%20290.1%2C34.9%20289.2%2C37.9%20288.4%2C34.9%20285.4%2C34.0%20288.4%2C33.2%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.66%27%2F%3E%3Cpolygon%20points%3D%27457.8%2C138.3%20459.1%2C142.6%20463.4%2C143.9%20459.1%2C145.1%20457.8%2C149.5%20456.6%2C145.1%20452.2%2C143.9%20456.6%2C142.6%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.45%27%2F%3E%3Ccircle%20cx%3D%27334.0%27%20cy%3D%2761.2%27%20r%3D%270.7%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.76%27%2F%3E%3Ccircle%20cx%3D%27111.5%27%20cy%3D%2729.3%27%20r%3D%270.8%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.64%27%2F%3E%3Ccircle%20cx%3D%2769.3%27%20cy%3D%274.8%27%20r%3D%271.3%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.88%27%2F%3E%3Ccircle%20cx%3D%27431.2%27%20cy%3D%27123.1%27%20r%3D%271.6%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.67%27%2F%3E%3Ccircle%20cx%3D%27377.2%27%20cy%3D%27119.8%27%20r%3D%271.5%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.73%27%2F%3E%3Ccircle%20cx%3D%27159.4%27%20cy%3D%2759.6%27%20r%3D%271.0%27%20fill%3D%27%23d27bff%27%20opacity%3D%270.89%27%2F%3E%3Cpolygon%20points%3D%27533.0%2C-0.1%20533.9%2C3.3%20537.4%2C4.3%20533.9%2C5.2%20533.0%2C8.6%20532.0%2C5.2%20528.6%2C4.3%20532.0%2C3.3%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.81%27%2F%3E%3Ccircle%20cx%3D%27253.3%27%20cy%3D%27117.1%27%20r%3D%271.3%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.94%27%2F%3E%3Ccircle%20cx%3D%27306.7%27%20cy%3D%2718.7%27%20r%3D%270.5%27%20fill%3D%27%23b026ff%27%20opacity%3D%270.74%27%2F%3E%3Ccircle%20cx%3D%27138.0%27%20cy%3D%27110.5%27%20r%3D%271.0%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.93%27%2F%3E%3Ccircle%20cx%3D%27371.3%27%20cy%3D%27112.7%27%20r%3D%270.7%27%20fill%3D%27%2339ff14%27%20opacity%3D%270.53%27%2F%3E%3Cpolygon%20points%3D%27459.5%2C28.0%20460.8%2C32.4%20465.1%2C33.6%20460.8%2C34.8%20459.5%2C39.2%20458.3%2C34.8%20453.9%2C33.6%20458.3%2C32.4%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.97%27%2F%3E%3Ccircle%20cx%3D%27410.9%27%20cy%3D%27113.2%27%20r%3D%271.3%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.68%27%2F%3E%3Cpolygon%20points%3D%27517.3%2C5.4%20518.1%2C8.2%20520.9%2C9.0%20518.1%2C9.8%20517.3%2C12.6%20516.5%2C9.8%20513.7%2C9.0%20516.5%2C8.2%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.5%27%2F%3E%3C%2Fsvg%3E");
+  --bat-sky-moon:    url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27130%27%20height%3D%27130%27%20viewBox%3D%270%200%20130%20130%27%3E%0A%3Cdefs%3E%3Cfilter%20id%3D%27b%27%20x%3D%27-50%25%27%20y%3D%27-50%25%27%20width%3D%27200%25%27%20height%3D%27200%25%27%3E%3CfeGaussianBlur%20stdDeviation%3D%277%27%2F%3E%3C%2Ffilter%3E%0A%3Cmask%20id%3D%27m%27%3E%3Crect%20width%3D%27130%27%20height%3D%27130%27%20fill%3D%27white%27%2F%3E%3Ccircle%20cx%3D%2780%27%20cy%3D%2754%27%20r%3D%2736%27%20fill%3D%27black%27%2F%3E%3C%2Fmask%3E%3C%2Fdefs%3E%0A%3Ccircle%20cx%3D%2760%27%20cy%3D%2770%27%20r%3D%2750%27%20fill%3D%27%23b026ff%27%20opacity%3D%27.55%27%20filter%3D%27url%28%23b%29%27%2F%3E%0A%3Ccircle%20cx%3D%2756%27%20cy%3D%2772%27%20r%3D%2746%27%20fill%3D%27%2339ff14%27%20opacity%3D%27.28%27%20filter%3D%27url%28%23b%29%27%20mask%3D%27url%28%23m%29%27%2F%3E%0A%3Ccircle%20cx%3D%2756%27%20cy%3D%2772%27%20r%3D%2742%27%20fill%3D%27%23f4ecff%27%20mask%3D%27url%28%23m%29%27%2F%3E%0A%3Cg%20transform%3D%27translate%2830%2064%29%20scale%281.05%29%27%20fill%3D%27%2307020d%27%3E%3Cpath%20d%3D%27M20%203%20L22.5%208%20Q28%201%2040%205%20Q34%208%2032%2016%20Q29%2011%2026%2014%20Q23%2012%2020%2019%20Q17%2012%2014%2014%20Q11%2011%208%2016%20Q6%208%200%205%20Q12%201%2017.5%208%20Z%27%2F%3E%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+  --bat-moon-pos:    70% -34px;   /* moon position: horizontal, vertical */
+  --bat-sky-height:  150px;
+}
+
+/* ---------- cursors (embedded 48px bats + neon glow, no hosting needed) ---------- */
+:root {
+  --bat-cursor-ptr:  url("data:image/png;base64,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");    /* regular pointer */
+  --bat-cursor-hov:  url("data:image/png;base64,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");    /* hover over links / clickables */
+  --bat-cursor-load: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAA+CAYAAABzwahEAAAUxklEQVR42uVbaXRcxZX+quq913urW2otlmQhyzbeYWwItgk7JnjAkAUPZCCEk8BkOwxhyGQ54ZCQ5MBMZgLDTPAJBENgTDAYA2YZNseYxdg4YAgYC8uWLMvaW73v7716VfNDavm56ZZkbJLMmXdO6b0+ra6+X91b93731m2yXIZwnC5S4bl4yQrPk801lfmmMucRl3IcAU8GnNiEIxMISiaZuxRouTnlpwmclLnbh/09aRuYBHS5+SpdsszcU7IA5Thol9ruxPaaVABeSVgyySgHStju4mgWQDkGUyY2wHbQrIKwRcFEicDlFrB0TlJB02KCMaHWlU9gynbtEpuQrOReTuMCgFVGQ6TM4rGSBSAlmha2+SwAvMxCV9S6cpR7bTLASonQduBWiaBWiUD2uZQK4O3AuQ2waZPLKlnsKWu8dP+SMqZHy4BV7GP4Nj7Dt5KMuE9heRtwu7DCJiQpmU8BoNrmpiWatAM2yyxyOR9yxCKQMnGclDE9u/mVDrugKgCl94tYhbeCPzcsC7It+/CMzfw3zEdMm7DcZgF2Uy+C1WzPiuRgVkoyaUFCQjA/DOokBQDG2CgA0G2veZnvmBR4OcBKBe2qZYRVu6dVvbZ45qzMTWeewtb8YZtrS2c3Gu/MfLX6a+ygTUu8BLh9Tkdulwhm7leW6q95LytkHDNVpsIvLDi4iayQ4IwhDR5T2tLrgtfpj1dfrfSPLUAp+CkBJxVA20Hah2a7awDUwj5R1X92aMOXlp+a/c0lKz0Fo2Des2279a8vveZ0XZK7Y9r91ks2weymziSHFv0pWybWB36as5hGHW7UUQfOJMI8k6fN6dyEm1goSNC8gJpwSfY0F3gmReH2W283dWa+ZANvt6yPAZ/Mq4+DT73G/eHv07+rvV1srlqhGAAcY2DtdzW3TZ5IiQKXohFLL4CalnrjeeepC5pr09c//Oz3+q9IhJoe4xvHBCsKRQsdwptb1fx4Nqsz5m7AUreW+4KRZstITp0VKKis1VIREIBfAl4BeIHeAZK/6ynqUhan/6XxWfHfFUIfmapXJ2XCiuJdykSyJ3B78ip5e0JKiIWptTW3WK/4zlLyhI1r3CGGaJND01DgkjEJgBIY6TQumLXAt+5aR+Yr92+8ZugH0VjDv8ntxT0oLbDMRU1PGBY3Z7dM59dXhx2rT+hzo5kDsy2gSUBWAzGXgpyk8AYMpOPS/OLqOlf/Qv0/2zaJTWXiPyZifcoEsbs4GACVOomiV6c20rhrJSFEIx/6r0t8mVyXkBJybnZb4MfGFv+5SgqdzlmaomIkU2B5w4RLYSCMwcjmcFrLbO+vr1qV+dqDm/5J/2Zsv2MmzQCQ0pQsl8uhoXGW2Trb505e04x/9p+FQSWBlAB0ziHDCcTyBgocqPJyYWxOsoFC/N22TdbzZTw/+SQEhlTQuuq+XH/SvMe32mI8CyIIp9Ikgqhkr+eMxDXeM1Ig4MJEbQ3DUFpXupMZzKurhuAWFMagZ7I4f85C9zdP7+F3X/jHn8/uzP4EgKROQuSs7LuIZZfsCzeIHXe3UUndcASCMBpmIVMzDUPVCoQ7DspzcBYGdc+e37uqv9+zHlDoFPj8hMBJmf1td3Bq3T+qgwP3jP2HRVRiEXV0FsEFk1xKSkUBmpQCOcPEKwf7Mb+hBpZlQVIKQghktkCvWb7EeOy9j0LGoXSN1kLzAIj3SuPd6C8zSxblB/ltkXe0kSjFnxxudHtqYNS2gDQuRKz5ZOyrb8Zg9Txoua3Q5iBzNGCPVuNFJqUoIUIE5VnCqeeIb+FEAScKIRSUSBimgaCq4Ll9vbhqwSwE/Z7DM3ML1fV1dNW8E7HhvsEljb/AewCI6zRk80YeEUnl4htjCHQr+NI7Fnq7U9ixbwDbBjogDmzH+dUzwKbPou+lRpDbK73e04/IA6TtGRNlg2z6re5y8ZvZY+rYcAFwJd/SCQ45F0OVOgQ5YuEIOcx0awIhxPMGYoYBCeCp9m5s7uzFGz2DiOcMMpCIybd29gZD35TtIFClJR3ZtY6lmqvaeuXcVuXUy99H7ck5BEMqFhWAsyNJhEZi6MxFEMsmqZ5Py/Cr8bbA9fy5EgJjTkZe7MDLxW/VFqacY8DdSovIFB51rRJMmOOmPgaagIAQAm6ZcLt88Lnc6Igm8HJnL94fimLvSALtkQS2HxwkhzJ5iZj0p9Y4l7uuyn4odeJMrnUtqfU7rP3O7ym/pkvBa97B7GUj8J2ch+ZxY1YeOH84gfqhMBnyMGMwJer06uRLrr+hIyXMzSqJ3x8DXiQwdg9u17QTgAeAF4AfgF+aCPQ2+X8nFItLPqrxIujRZwrDLCBQFUJzwwwIaY29D0gJUErAKIOQgEW4iEejNJYIQz1BRPVu1ExvbsOMmja8f+4NaG89gJO8d2J1ax9urO6Db78T+gu1YO9bYvgAMb6dkM6dqoIT/jRyihIiSQC5EgJj2cy/rMZpmeyoqPFxbQPwEAZXbD2fS5JaLSgEGYc1ugAmN+F0uFBf2wzGGKQcBSyEBKUUuq4jGh+GYepwqC7i8fmEqilipDvicTicqAlOg0yF0RbpBkIXYrdnMT4Y6cfWrBtzFo6gecmIeGxXgN60nyj764y3vDfEvuc9hw6NabyUDotKjo5Nv9Vd6syKFNVu4s4x4G4AbqNHOPm7jgVUJZwIygg5bOI+bwDTG9ugqU5IeXihGWXQjQKGIj1IpCIYjvTDNHV43QHidnipJJbM6gaZG6zG7cYh7Imn4c/Fkaq9AFHPMsSyw3gzqYgPnjTpXc+IsOel+DdqbuZPu0+jQ7Y9Xm5/l73oBBx9fEgOLfe2qB6+iZw5eLr7BuNR3yoAkAZUITi4ZcLkBjTNiaaGVjCqQAgOQg7HSEVV0T/Yi3WPrMXTzz4BvWAimY4imY4CAIL+apJOSpy8qgPzb4zhFjWMms63cPrbG+FK1iLJbhZDr88Tj621om2dmRudc2jcZtKmbV+LqVR0lUnCGBv8vlhiPFx9rwUKRXXCqbngc7vgqlKhMgqTc+QKGaTScdTXTgdjDJbFxzy8nUNJuN1uPLxuPdxuNzRNg5SAYY56fUV1IqgRPJLzYfXFMcyN5PDDdf34+e5XcaEniOdOO8cQLw45mzdkbiOM5cc0rFdIQ8VkGlcmqraE7+At/OHae2c0NuYXndAsQi6PIrhUIzmD9qayCGfz0DQH6r1VqAk2ACAQQow5OnLEinLOMa2+GRvWb0IsNYJgVQCMKgj4aiCEBcIonArQ11+LG3oC2LhqOxpHGnHN8wfwX3t34Dw9q70X/9D0nsUGyoSvKZv4RMxtHLzrFJJMWhw/W/FZnD93jge6PvqWEAjndbzVO4wn9x7E/ngKGmOQUhZjWxkqJSGFxMkLP4N4YgSpdAr1dY1wqM4x4AqE1KHQk7FzKIdbp/XijssHsDzSgM4/fige1HPUESq020AXSjRerpY36R4ve/nOYRm1zdj42ze2awVumrrBwbkFISXq3E5cOn8G1l56FpY11SFnmGDkcG4gpTy8EOPWLmFZFmpDDWhqqocUAiAAoRRSSBg8izyZBSZX4PcHWrAp5AO+MozVJ8bF3HAXChrJAMh/EsJSCXhpnWp8n7RsLdz18v6D7LdvvG4wj0tYlgUQAktI6AUDCqNQGYElxeiH5WhBxelwQlGU0enGFoAQAmFZSOaiOHPl2YgkRkAJBSUU2XwSmubDwlA94qmzIORJuGt/CyKLLZE7W7cuCUUhD9G5Y6ALFUCLqYKnJXz2Y+CpixhNDyWvuO3FNzybO/ZkHT4vTG6N1ooohZRAWuegIJBSgFIKwzCwv2sv4okoCKEAIZAAVEVBb7gXyaF+eN7fg0afBwXTAKUU+VwGeSlw0p9ew7zBQcTx9+hJhvgV322lq+5xOH4UZ5ZfdQekeYRTq7S3j0rj5erfHIDlv4gN+a7M3/6tdZt8Wzr3ZBxVfljCAhcCoARehwIhJSihMAwdpkzj86svQCTRi66ej8bjeFdPJ1Sex8arr8SPL/1bXL5oATIGhxQWQtUN8AVDeGHHOsx/81HUJH3cuFNXOvcl3pZvR65yd0Qvqe4cOIOoR2jbLClXT8mxlSMwdupqJzPMs1IMZvcZqac2HDjD40Jm0YwW6mQaJYyicySBdwZG4He70DdwCDPntODBh9bi2WdewJ723fD7AlAViRVfvADLHQ6sXn4aRDqFjfsH0JfKQWMUEkDQV42C4AgPt/O6j95T9BN2Pt/0In+AjO7t7Niw7/Fi1XZKpycTJSmkAn1VACi+S2Sv6ch3bFrT+7ndhwao080Mj08zHQrk1q4hRkFAGcH7H7yLxzc8gc7OAyAEcDndkJJgYKAfh0YiyBYMPNU5gNcPDcOtKodPCYSAz1OFcKJfpJKHzOZt5n8QOg44W8GxHZVTK01SaAlltScp7rFEpZis+HhcBgauVa8ovOE8ryUYhEdliAsmaoONVEqJ3oFO9A30wOVyQlU0tLXOh8flQy6XhSAEhpBwqOoo6HHHN+YDFcmj4bCSXtb9bOND1uMAUgCSANIAipovdW6iUjIyWRyXE5xBlyb5lhIkesuT/EnJMy+Z4XRVfLeoj18TvNbldAufK0Cbp7Whyl+NQiEPvy8Ip8MNzg04nU5QQsDoaFQQUo6XQGXxjwQcmhOJhNRK2Jk+yWHBcW8MqHRKKokCoTUSXWtkI+oLiQeGL1a+TpqJ6VODarCqFvADQlgQUkBRVBAQWBaHkGSCtgYJEALqlGlbfm3XLq8Quo4KOJ3kcN9esqVWQmpDN+H07A6rRgoo9nKuazFNe34Sf7G/56A6kuyzTDMHCxYEGVVNKpdGz0An8oXcGI+XdmYzSngAUDBqCS7ofs+CCqCtY9X2lJKU4p4XutTCi2qfpoQiuRGImzrInEK7soAPkSael4M0aHygtiiMIhKJ0/6eBAJOAYIChGWAUQdMwhCjDF6PH1yMcgGQI0+AiSTUV+UrpPv988K3JWfU3czenoCoiE8CulJdnZZ4cxWAMniB87uqolmhhpa8wgssxS1HqtuYTzr0+S4lC0NzosrlA2muRlPAIJ4L+/DE0AqAL0WTRdBqcdT0t2Pbq/ch7gkg6AuCW9zG6gBKGEaig/AFAlYgUGMMPx5fjZvz20uAW8cCuDQ7q3SCogJQ9QPCL7vcq4L1tbkz5wvv6/oCLGnvQOPZUnR4nOKjxHlyfjRMY/kIWRTL0p+e2IfaSwfwgPcZ/GK3ioPps3DImg+X+QU4QTC0eQ3MmXO53+MTjCmglqIJITAU7UEun4Ru5D1OzQPipOYE52DyaOJ2JQJDS459NVtl1T18lfp1K90w/woXodd9I8rul5/Hiu07cOvSHvKZH7fT++pXspj3OrogMkDyuSHM7s6ieZ8Li5siuGTBVmTkLhxKfAiDjaCw6GKosaQo7N7JCpbFUokEE9ISTo/TiMbCSuDx6DV6KPmH7C6zte5/0jcoQZKdgJd/Yq2z6be6aYXqqrMYx1M/9P+yxlOLX/nCyvBlHI/2XwS6dx+W9uQxY66BmfO3Yk36JMSav4oWo4DX8zrQlcLCjxyoFl58ftEA5s7oR4Z3IZfcydmWMHN/a/CB2t9nf0dOS29Nraefc4d8I5bOVXZZ/JHgFayr6gZjgxIkmUnCGI4FeLkKaxG4Wz8ogsl11VedpTkKX62NqR+tzOGZyAp4uxKoi/RiQd6BOcuSCDvb8Uq+Dj3TL0er5kaPzvHRoTRmdBioGvRiTmMaFy8Z4HsesmhXIryj8T7rWaIgo7WSaG6rFLkOa5kUQvH8ILOGeUiRpekTaBvHqnE78I/V0xMPirnGrtBFV0KYpy7KqH3nZHFP9GrMHCRID+/DikgOzO/EqWf0YXMkjBg07K6/DL6qGjBO8FJSQtmbx4wOh8jkXfmnX1Yc+trkbUoNSRSpqPdKvjPvSLzgvDb1G9dCGpsg3/5E9HSqXv2IkKbvJU1BomCxzDMyXYKpBnQlB7N5EfoOvop3e5NY9jpDw3wXfragE9/etRGa5cCbbVegr6GBf/bdLeZ9e3c5nm9vp6vDEUc2LS0WIJExClpkZmboOyxaknXZzfu4mXglAvMxtmb2K9OahYUWximCEhahcKAD7a2z4Kqfi42+api7DRgv1+ML6jCun9UDxfUY6sUjPPzmZmXbjidcBw++Q59ikciVI8bQvrTGrIjMjQEv8u8iB8/ZEpFy2pbHQlqmQlnHQ4WQlDUbOryaABQJQRR40YWBgAazZQn2Rg5gy8EkVu4swFw0DTd/eS+GBhx8/a2/Uhq8g9uCT+IhrYUmfayYXGQKANUnKBaWmrUoSULk8dC6MkEn8OgX+qyox9ChaARQJSAVqIiAygg+aJmHcw+0Yl0ogmUd3fC87EXM22AO3Tus+i8z/73hFvqOrVRkTyn1MsUEXqEBUBxPTVcqNsqSjkHumGUdGLY4dAJLOgXqPTr8VVnh1g7ku0I1+WzLzHwq1KJvdNUIsccw776zim1JqlsabiE7xlLK4rAXE3IVcutS0z5mTj4VUy8tNHIA3HeO7Bq6lyBjCSuoUFRJ3SQvR1XP7jUud7oKf8xE4OcCj3g8aIsn08/2i6qZu7J3AzRtC0n6BH1o1iTZljzW0DUV4KKk3mZ4PkMj/aAwXZL2dqvG1atDWnJfdDhwe9cdvpV0SJpA/HeybWBtzY++Y6JKd5FM4zQaKQPYnMKphyijiE/lIstlqFwzgJ25OTpa/c/8wIcZOwTBa/7Cxnk79PttKdX4QvVcQi9W0mqg6VV9TUlKadrOrXmFffypaXci4KUExt605+j7mjy98Jz3t9RP9rV1Zf5hgt7S4jBKek3L9bD+RQCXq7mVJirjnYtCl1p4dv1+90MDS/3nKrmSdiq7Jy4CNCs07YrjmWEdL+DlsrTx8rIoSJU6CSnpHS+tw5drzZ7IrP/sgCvF8aJgZExLxXZrRp2kXHt0uV8eiJIwJD6tWHy8gJMKXpXYFqPSTyRkhZYrUcak/+Kgy4UzUsEURRlOLyssgPxzxeLjCRwlGrYDr1R3l5O8/qsCXClJqfTTJTLF1smj+TXhXxXwqQosP+Hn/qqB/5/T3vHIzv7fXP8LX2EVV8ANReAAAAAASUVORK5CYII=");   /* loading */
+  /* click point = the tip of the green marker you drew (plus the glow padding) */
+  --bat-ptr-x: 10;  --bat-ptr-y: 11;
+  --bat-hov-x: 11;  --bat-hov-y: 11;
+  --bat-load-x: 11; --bat-load-y: 11;
+}
+
+/* ---------- discord variable overrides ---------- */
+.theme-dark, .theme-light, :root {
+  --background-base-lowest:     var(--bat-black);
+  --background-base-lower:      var(--bat-void);
+  --background-base-low:        var(--bat-night);
+  --background-surface-high:    var(--bat-panel);
+  --background-surface-higher:  var(--bat-panel-hi);
+  --background-surface-highest: var(--bat-panel-hi);
+
+  --background-primary:           var(--bat-night);
+  --background-secondary:         var(--bat-void);
+  --background-secondary-alt:     var(--bat-black);
+  --background-tertiary:          var(--bat-black);
+  --background-floating:          var(--bat-panel);
+  --background-modifier-hover:    rgba(176, 38, 255, 0.16);
+  --background-modifier-selected: rgba(57, 255, 20, 0.12);
+  --background-modifier-active:   rgba(176, 38, 255, 0.26);
+  --chat-background-default:      var(--bat-night);
+  --channeltextarea-background:   var(--bat-panel);
+
+  --brand-500: var(--bat-purple);
+  --brand-560: var(--bat-purple-hi);
+  --brand-600: var(--bat-green-lo);
+  --text-brand: var(--bat-green);
+  --control-brand-foreground:     var(--bat-purple);
+  --control-brand-foreground-new: var(--bat-purple);
+
+  --header-primary:   var(--bat-green);
+  --header-secondary: var(--bat-purple-hi);
+  --text-normal:      var(--bat-text);
+  --text-default:     var(--bat-text);
+  --text-muted:       var(--bat-muted);
+  --text-link:        var(--bat-purple-hi);
+  --interactive-normal: var(--bat-muted);
+  --interactive-hover:  var(--bat-green);
+  --interactive-active: var(--bat-purple-hi);
+
+  --mention-foreground: var(--bat-green);
+  --mention-background: rgba(57, 255, 20, 0.16);
+  --scrollbar-thin-thumb: var(--bat-purple);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: var(--bat-purple);
+  --scrollbar-auto-track: var(--bat-void);
+}
+
+/* ---------- fonts ---------- */
+:root {
+  --font-primary: "Special Elite", "Courier New", monospace;
+  --font-h1: "Nosifer", "Creepster", cursive;   /* drippy blood */
+  --font-h2: "Nosifer", "Creepster", cursive;
+  --font-h3: "Nosifer", "Creepster", cursive;
+  --font-sub: "Special Elite", "Courier New", monospace;
+}
+
+body, button, input, textarea, select {
+  font-family: var(--font-primary) !important;
+}
+
+/* headers in chat: # / ## / ### , each gets a bat */
+[class*="markup_"] h1, [class*="markup_"] [class*="heading-xl"] {
+  font-family: var(--font-h1) !important;
+  font-size: 1.5rem !important;
+  line-height: 1.6 !important;
+  color: var(--bat-green);
+  text-shadow: var(--bat-glow-g);
+}
+[class*="markup_"] h2, [class*="markup_"] [class*="heading-lg"] {
+  font-family: var(--font-h2) !important;
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
+  color: var(--bat-purple-hi);
+  text-shadow: var(--bat-glow-p);
+}
+[class*="markup_"] h3, [class*="markup_"] [class*="heading-md"] {
+  font-family: var(--font-h3) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  color: var(--bat-green);
+}
+[class*="markup_"] h1::before, [class*="markup_"] h2::before, [class*="markup_"] h3::before,
+[class*="markup_"] [class*="heading-xl"]::before,
+[class*="markup_"] [class*="heading-lg"]::before,
+[class*="markup_"] [class*="heading-md"]::before {
+  content: "\1F987\00a0";
+}
+
+/* subtext: -# text */
+[class*="markup_"] [class*="subtext"], [class*="markup_"] small, [class*="subtext_"] {
+  font-family: var(--font-sub) !important;
+  color: var(--bat-muted);
+}
+
+/* keep code readable */
+code, pre, [class*="markup_"] code, [class*="hljs"] {
+  font-family: Consolas, "Fira Code", "Courier New", monospace !important;
+}
+
+/* ---------- cursors ----------
+   Every cursor type in Discord (hand, text, grab, move, resize, help, not-allowed...)
+   is replaced by one of the three bats. */
+
+/* 1. regular pointer: forced everywhere, beats Discord's own cursor rules */
+html, body, * {
+  cursor: var(--bat-cursor-ptr) var(--bat-ptr-x) var(--bat-ptr-y), auto !important;
+}
+
+/* 2. hover: anything clickable */
+a, a *, button, button *,
+[role="button"], [role="button"] *,
+[role="link"], [role="link"] *,
+[role="tab"], [role="tab"] *,
+[role="treeitem"], [role="treeitem"] *,
+[role="listitem"], [role="listitem"] *,
+[role="option"], [role="option"] *,
+[role="switch"], [role="menuitem"], [role="menuitem"] *,
+[role="checkbox"], [role="radio"], [role="slider"],
+[class*="clickable"], [class*="clickable"] *,
+[class*="interactive"], [class*="interactive"] *,
+[class*="guilds_"] *,
+[class*="blobContainer"], [class*="blobContainer"] *,
+[class*="listItem"], [class*="listItem"] *,
+[class*="avatar"], [class*="icon_"], [class*="Icon"],
+[class*="channel_"] a, [class*="channel_"] a * {
+  cursor: var(--bat-cursor-hov) var(--bat-hov-x) var(--bat-hov-y), pointer !important;
+}
+
+/* 3. loading */
+[class*="loading"], [class*="loading"] *,
+[class*="spinner"], [class*="spinner"] *,
+[class*="Spinner"], [class*="Spinner"] *,
+[aria-busy="true"], [aria-busy="true"] *,
+[style*="cursor: wait"], [style*="cursor:wait"],
+[style*="cursor: progress"], [style*="cursor:progress"] {
+  cursor: var(--bat-cursor-load) var(--bat-load-x) var(--bat-load-y), progress !important;
+}
+
+/* text fields: still a bat (regular pointer) instead of the I-beam */
+input, textarea,
+[contenteditable="true"], [contenteditable="true"] *,
+[role="textbox"], [role="textbox"] * {
+  cursor: var(--bat-cursor-ptr) var(--bat-ptr-x) var(--bat-ptr-y), text !important;
+}
+
+/* ---------- surfaces ---------- */
+
+/* server list: black + bats */
+[class*="guilds_"],
+[class*="guilds_"] nav,
+[class*="guilds_"] [class*="scroller"] {
+  background: var(--bat-pattern-guilds), var(--bat-black) !important;
+}
+
+/* channel sidebar + member list: dark purple + small bats, neon purple edge */
+[class*="sidebar_"],
+nav[class*="wrapper_"],
+[class*="members_"] {
+  background:
+    var(--bat-pattern-side),
+    linear-gradient(180deg, var(--bat-panel), var(--bat-void)) !important;
+}
+[class*="sidebar_"] {
+  border-right: 1px solid rgba(176, 38, 255, 0.55);
+  box-shadow: 2px 0 14px rgba(176, 38, 255, 0.18);
+}
+[class*="members_"] {
+  border-left: 1px solid rgba(176, 38, 255, 0.45);
+}
+
+/* main chat: big bats over a purple/green haze */
+[class*="chatContent_"],
+[class*="chat_"] {
+  background:
+    var(--bat-pattern-chat),
+    radial-gradient(ellipse at 100% 0%, rgba(176, 38, 255, 0.22), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(57, 255, 20, 0.09), transparent 55%),
+    var(--bat-night) !important;
+}
+
+/* chat header: neon green underline */
+section[class*="title_"] {
+  border-bottom: 1px solid rgba(57, 255, 20, 0.45) !important;
+  box-shadow: 0 1px 14px rgba(57, 255, 20, 0.14) !important;
+}
+
+/* channel names: bright purple with a neon green glow underneath, a bat beside each */
+:root {
+  --bat-name-purple: #c44bff;
+  --bat-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2724%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%3E%3Ctext%20x%3D%271%27%20y%3D%2719%27%20font-size%3D%2717%27%20font-family%3D%27Segoe%20UI%20Emoji%2CApple%20Color%20Emoji%2CNoto%20Color%20Emoji%2Csans-serif%27%3E%F0%9F%A6%87%3C%2Ftext%3E%3C%2Fsvg%3E");
+}
+[class*="channel_"] [class*="name_"] {
+  color: var(--bat-name-purple);
+  text-shadow: 0 3px 7px rgba(57, 255, 20, 0.85);
+  background: var(--bat-icon) no-repeat left center / 18px 18px;
+  padding-left: 22px;
+}
+[class*="channel_"]:hover [class*="name_"],
+[class*="modeSelected_"] [class*="name_"] {
+  color: #e6b8ff !important;
+  text-shadow: 0 3px 9px #39ff14, 0 0 14px rgba(57, 255, 20, 0.6);
+}
+
+/* member list group titles */
+h3[class*="membersGroup_"] {
+  color: var(--bat-green) !important;
+}
+h3[class*="membersGroup_"]::before {
+  content: "\1F987\00a0";
+}
+
+/* @mentions get a bat */
+.mention::before {
+  content: "\1F987\00a0";
+}
+
+/* links: purple, neon green on hover */
+a:hover {
+  color: var(--bat-green) !important;
+  text-shadow: var(--bat-glow-g);
+}
+
+/* timestamps */
+time, [class*="timestamp_"] {
+  color: var(--bat-purple-hi) !important;
+}
+
+/* message hover: purple wash + green edge */
+[class*="message_"]:hover {
+  background: rgba(176, 38, 255, 0.09) !important;
+  box-shadow: inset 3px 0 0 var(--bat-green);
+}
+
+/* message box */
+[class*="channelTextArea_"] {
+  border: 1px solid rgba(176, 38, 255, 0.75);
+  border-radius: 10px;
+  box-shadow: 0 0 14px rgba(176, 38, 255, 0.3);
+}
+[class*="channelTextArea_"]:focus-within {
+  border-color: var(--bat-green);
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.45);
+}
+
+/* selected channel */
+[class*="modeSelected_"] {
+  background: linear-gradient(90deg, rgba(176, 38, 255, 0.55), rgba(57, 255, 20, 0.14)) !important;
+  border-left: 3px solid var(--bat-green);
+}
+
+/* buttons */
+[class*="lookFilled_"][class*="colorBrand_"] {
+  background: linear-gradient(135deg, var(--bat-purple-lo), var(--bat-purple)) !important;
+  color: #fff !important;
+  border: none;
+  box-shadow: var(--bat-glow-p);
+}
+[class*="lookFilled_"][class*="colorBrand_"]:hover {
+  background: linear-gradient(135deg, var(--bat-purple), var(--bat-green-lo)) !important;
+  box-shadow: var(--bat-glow-g);
+}
+
+/* number badges: neon green */
+[class*="numberBadge_"] {
+  background: var(--bat-green) !important;
+  color: #000 !important;
+  box-shadow: var(--bat-glow-g);
+}
+/* the "unread mentions" bars above/below the server list: keep the container clear
+   so it never covers the Discord icon, only the little pill inside is green */
+[class*="unreadMentionsIndicator"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+[class*="unreadMentionsBar"] {
+  background: var(--bat-green) !important;
+  color: #000 !important;
+  box-shadow: var(--bat-glow-g);
+}
+
+/* guild icon active pill + hover glow */
+[class*="item_"] > [class*="pill_"] span {
+  background: var(--bat-green) !important;
+  box-shadow: var(--bat-glow-g);
+}
+[class*="guilds_"] [class*="wrapper_"]:hover {
+  filter: drop-shadow(0 0 6px var(--bat-purple));
+}
+
+[class*="mention"] { border-radius: 4px; }
+
+/* selection + scrollbars */
+::selection {
+  background: rgba(57, 255, 20, 0.4);
+  color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--bat-purple), var(--bat-green-lo)) !important;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-track { background: transparent !important; }
+
+/* popouts, menus, modals */
+[class*="menu_"],
+[class*="popout_"],
+[class*="modal_"],
+[class*="layer_"] [class*="container_"][class*="theme"] {
+  border: 1px solid rgba(176, 38, 255, 0.75);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.65), 0 0 20px rgba(176, 38, 255, 0.25);
+}
+
+/* dividers */
+[class*="divider_"] {
+  border-color: rgba(176, 38, 255, 0.55) !important;
+}
+
+/* ---------- night sky overlay ----------
+   Three click-through layers fixed to the top of the window:
+   html::before = twinkling stars, body::before = moon + stars + purple haze,
+   body::after = a bat that flies across now and then. */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--bat-sky-height);
+  pointer-events: none;
+  z-index: 99998;
+  background: var(--bat-sky-stars-b) repeat-x 0 0 / 640px 150px;
+  -webkit-mask-image: linear-gradient(#000 25%, transparent);
+  mask-image: linear-gradient(#000 25%, transparent);
+  animation: bat-twinkle 3.6s ease-in-out infinite alternate;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--bat-sky-height);
+  pointer-events: none;
+  z-index: 99997;
+  background:
+    var(--bat-sky-moon) no-repeat var(--bat-moon-pos) / 130px 130px,
+    var(--bat-sky-stars-a) repeat-x 0 0 / 560px 150px,
+    linear-gradient(180deg, rgba(176, 38, 255, 0.30), rgba(57, 255, 20, 0.05) 55%, transparent);
+  -webkit-mask-image: linear-gradient(#000 45%, transparent);
+  mask-image: linear-gradient(#000 45%, transparent);
+}
+body::after {
+  content: "\1F987";
+  position: fixed;
+  top: 6px;
+  left: 0;
+  font-size: 26px;
+  pointer-events: none;
+  z-index: 99999;
+  filter: drop-shadow(0 0 6px var(--bat-purple));
+  opacity: 0;
+  animation: bat-fly 70s linear infinite;
+}
+
+@keyframes bat-twinkle {
+  from { opacity: 0.25; }
+  to   { opacity: 1; }
+}
+@keyframes bat-fly {
+  0%   { opacity: 0; transform: translate(-60px, 0) rotate(-6deg); }
+  1%   { opacity: 1; }
+  7%   { transform: translate(20vw, 22px) rotate(8deg); }
+  14%  { transform: translate(42vw, 4px) rotate(-6deg); }
+  21%  { transform: translate(64vw, 26px) rotate(8deg); }
+  27%  { opacity: 1; transform: translate(88vw, 6px) rotate(-6deg); }
+  30%  { opacity: 0; transform: translate(calc(100vw + 60px), 20px) rotate(6deg); }
+  100% { opacity: 0; transform: translate(calc(100vw + 60px), 20px) rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html::before { animation: none; opacity: 0.8; }
+  body::after { display: none; }
+}
