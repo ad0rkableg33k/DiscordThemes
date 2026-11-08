@@ -187,6 +187,84 @@
   .card.onair .btn:hover { box-shadow: 0 0 16px var(--red), 0 0 30px var(--red); }
   .card .btn.alt:hover { box-shadow: 0 0 10px currentColor !important; }
 
+  /* cursors */
+  .cursor-strip {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 0.85rem;
+    margin-bottom: 0.9rem;
+  }
+  .cursor-strip .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9d7c90;
+    margin-bottom: 0.5rem;
+  }
+  .cursor-strip .label a { color: var(--pink-bright); text-transform: none; letter-spacing: 0; font-size: 0.8rem; }
+  .cursor-row { display: flex; gap: 0.6rem; }
+  .cur {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.25rem 0.4rem;
+    background: #130810;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    text-decoration: none;
+    color: #c9a8bd;
+    font-size: 0.72rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cur img { width: 48px; height: 48px; image-rendering: pixelated; object-fit: contain; }
+  .cur:hover, .cur:focus-visible { border-color: var(--pink-bright); box-shadow: 0 0 10px rgba(255,31,160,0.45); color: #fff; }
+  .cursor-note { font-size: 0.75rem; color: #8f7083; margin: 0.5rem 0 0; }
+
+  section.packs {
+    background: var(--black-soft);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 3.5rem;
+  }
+  section.packs h2 {
+    font-family: 'Creepster', cursive;
+    color: var(--purple);
+    text-shadow: 0 0 6px var(--purple), 0 0 14px var(--teal);
+    letter-spacing: 1px;
+    margin: 0 0 0.25rem;
+    font-size: 1.9rem;
+  }
+  section.packs > p { color: #c9a8bd; margin: 0 0 1.5rem; font-size: 0.95rem; }
+  .pack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .pack {
+    background: #130810;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .pack h3 { margin: 0; font-size: 1rem; font-weight: 600; color: #f4d8ee; }
+  .pack .cursor-row { gap: 0.4rem; }
+  .pack .cur { background: #0b0409; }
+  .pack .btn { text-align: center; font-size: 0.85rem; padding: 0.55rem 1rem; background: linear-gradient(135deg, var(--purple), var(--teal)); box-shadow: 0 0 8px var(--purple); color: #07040f; }
+  .pack .btn:hover { box-shadow: 0 0 16px var(--purple), 0 0 30px var(--teal); }
+  .pack-all { text-align: center; }
+  .pack-all .btn { background: linear-gradient(135deg, var(--pink), var(--magenta)); box-shadow: 0 0 8px var(--pink); font-size: 1rem; padding: 0.8rem 1.6rem; }
+  .pack-all .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--magenta); }
+  .pack-all small { display: block; margin-top: 0.6rem; color: #8f7083; font-size: 0.78rem; }
+
   /* lightbox */
   dialog.lightbox {
     border: 1px solid rgba(255,255,255,0.15);
@@ -324,6 +402,14 @@
       <div class="swatch dragon"></div>
       <h2>Amethyst Wyrm</h2>
       <p>Purple, teal and magenta dragon theme. Night sky with a dragon moon, neon pink glowing text, sparkles and clouds in every section, dragon cursors.</p>
+      <div class="cursor-strip">
+        <div class="label"><span>Cursors</span><a href="cursors/amethyst-wyrm-cursors.zip" download>Get the pack (.zip)</a></div>
+        <div class="cursor-row">
+          <a class="cur" href="cursors/amethyst-wyrm/pointer.png" download="amethyst-wyrm-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/amethyst-wyrm/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/amethyst-wyrm/hover.png" download="amethyst-wyrm-hover.png" title="Download hover cursor (.png)"><img src="cursors/amethyst-wyrm/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/amethyst-wyrm/loading.png" download="amethyst-wyrm-loading.png" title="Download loading cursor (.png)"><img src="cursors/amethyst-wyrm/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn" href="themes/dragon-theme.theme.css" download>Download .theme.css</a>
       </div>
@@ -336,6 +422,14 @@
       <div class="swatch bat"></div>
       <h2>Bat Cave</h2>
       <p>Bright purple, neon green and black. Bat cursors with a neon glow, drippy blood headers, a night sky with a moon and stars. Bats everywhere.</p>
+      <div class="cursor-strip">
+        <div class="label"><span>Cursors</span><a href="cursors/bat-cave-cursors.zip" download>Get the pack (.zip)</a></div>
+        <div class="cursor-row">
+          <a class="cur" href="cursors/bat-cave/pointer.png" download="bat-cave-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/bat-cave/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/bat-cave/hover.png" download="bat-cave-hover.png" title="Download hover cursor (.png)"><img src="cursors/bat-cave/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/bat-cave/loading.png" download="bat-cave-loading.png" title="Download loading cursor (.png)"><img src="cursors/bat-cave/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn" href="themes/bat-theme.theme.css" download>Download .theme.css</a>
       </div>
@@ -348,6 +442,15 @@
       <div class="swatch hex"></div>
       <h2>Hex &amp; Haunt</h2>
       <p>Witchy night theme in black, turquoise, purple, silver and neon green. Moonlit sky, drifting ghosts, bat flocks, dripping slime, spiders and wand cursors. Preview shows the main version.</p>
+      <div class="cursor-strip">
+        <div class="label"><span>Cursors</span><a href="cursors/hex-and-haunt-cursors.zip" download>Get the pack (.zip)</a></div>
+        <div class="cursor-row">
+          <a class="cur" href="cursors/hex-and-haunt/pointer.png" download="hex-and-haunt-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/hex-and-haunt/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/hex-and-haunt/hover.png" download="hex-and-haunt-hover.png" title="Download hover cursor (.png)"><img src="cursors/hex-and-haunt/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/hex-and-haunt/loading.png" download="hex-and-haunt-loading.png" title="Download loading cursor (.png)"><img src="cursors/hex-and-haunt/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+        </div>
+        <p class="cursor-note">The no-loading version uses the hover staff for every state.</p>
+      </div>
       <div class="actions">
         <a class="btn" href="themes/hex-and-haunt.theme.css" download>Download .theme.css</a>
         <a class="btn alt" href="themes/hex-and-haunt.theme2.css" download>No loading cursor</a>
@@ -361,6 +464,14 @@
       <div class="swatch sorrow"></div>
       <h2>Midnight Sorrow</h2>
       <p>Rainy midnight blue with blood-red glowing text. Dagger cursors, a crow moon, fog, thorns and broken hearts.</p>
+      <div class="cursor-strip">
+        <div class="label"><span>Cursors</span><a href="cursors/midnight-sorrow-cursors.zip" download>Get the pack (.zip)</a></div>
+        <div class="cursor-row">
+          <a class="cur" href="cursors/midnight-sorrow/pointer.png" download="midnight-sorrow-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/midnight-sorrow/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/midnight-sorrow/hover.png" download="midnight-sorrow-hover.png" title="Download hover cursor (.png)"><img src="cursors/midnight-sorrow/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/midnight-sorrow/loading.png" download="midnight-sorrow-loading.png" title="Download loading cursor (.png)"><img src="cursors/midnight-sorrow/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn" href="themes/midnight-sorrow.theme.css" download>Download .theme.css</a>
       </div>
@@ -373,12 +484,80 @@
       <div class="swatch onair"></div>
       <h2>On Air</h2>
       <p>Black, white and red music studio theme. Stage lights, a live equalizer, rising notes, speakers, glowing lettering and a mic cursor.</p>
+      <div class="cursor-strip">
+        <div class="label"><span>Cursors</span><a href="cursors/on-air-cursors.zip" download>Get the pack (.zip)</a></div>
+        <div class="cursor-row">
+          <a class="cur" href="cursors/on-air/pointer.png" download="on-air-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/on-air/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/on-air/hover.png" download="on-air-hover.png" title="Download hover cursor (.png)"><img src="cursors/on-air/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/on-air/loading.png" download="on-air-loading.png" title="Download loading cursor (.png)"><img src="cursors/on-air/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+        </div>
+      </div>
       <div class="actions">
         <a class="btn" href="themes/on-air.theme.css" download>Download .theme.css</a>
       </div>
     </div>
 
   </div>
+
+  <section class="packs" id="cursors">
+    <h2>Cursor Packs</h2>
+    <p>Every cursor from the themes, as standalone bundles. Each zip has the <code>.png</code> files plus ready-to-use Windows <code>.cur</code> files. Click any cursor to grab just that one.</p>
+    <div class="pack-grid">
+    <div class="pack">
+      <h3>Amethyst Wyrm</h3>
+      <div class="cursor-row">
+          <a class="cur" href="cursors/amethyst-wyrm/pointer.png" download="amethyst-wyrm-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/amethyst-wyrm/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/amethyst-wyrm/hover.png" download="amethyst-wyrm-hover.png" title="Download hover cursor (.png)"><img src="cursors/amethyst-wyrm/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/amethyst-wyrm/loading.png" download="amethyst-wyrm-loading.png" title="Download loading cursor (.png)"><img src="cursors/amethyst-wyrm/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+      </div>
+      <a class="btn" href="cursors/amethyst-wyrm-cursors.zip" download>Download pack (.zip)</a>
+    </div>
+
+    <div class="pack">
+      <h3>Bat Cave</h3>
+      <div class="cursor-row">
+          <a class="cur" href="cursors/bat-cave/pointer.png" download="bat-cave-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/bat-cave/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/bat-cave/hover.png" download="bat-cave-hover.png" title="Download hover cursor (.png)"><img src="cursors/bat-cave/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/bat-cave/loading.png" download="bat-cave-loading.png" title="Download loading cursor (.png)"><img src="cursors/bat-cave/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+      </div>
+      <a class="btn" href="cursors/bat-cave-cursors.zip" download>Download pack (.zip)</a>
+    </div>
+
+    <div class="pack">
+      <h3>Hex &amp; Haunt</h3>
+      <div class="cursor-row">
+          <a class="cur" href="cursors/hex-and-haunt/pointer.png" download="hex-and-haunt-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/hex-and-haunt/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/hex-and-haunt/hover.png" download="hex-and-haunt-hover.png" title="Download hover cursor (.png)"><img src="cursors/hex-and-haunt/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/hex-and-haunt/loading.png" download="hex-and-haunt-loading.png" title="Download loading cursor (.png)"><img src="cursors/hex-and-haunt/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+      </div>
+      <a class="btn" href="cursors/hex-and-haunt-cursors.zip" download>Download pack (.zip)</a>
+    </div>
+
+    <div class="pack">
+      <h3>Midnight Sorrow</h3>
+      <div class="cursor-row">
+          <a class="cur" href="cursors/midnight-sorrow/pointer.png" download="midnight-sorrow-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/midnight-sorrow/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/midnight-sorrow/hover.png" download="midnight-sorrow-hover.png" title="Download hover cursor (.png)"><img src="cursors/midnight-sorrow/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/midnight-sorrow/loading.png" download="midnight-sorrow-loading.png" title="Download loading cursor (.png)"><img src="cursors/midnight-sorrow/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+      </div>
+      <a class="btn" href="cursors/midnight-sorrow-cursors.zip" download>Download pack (.zip)</a>
+    </div>
+
+    <div class="pack">
+      <h3>On Air</h3>
+      <div class="cursor-row">
+          <a class="cur" href="cursors/on-air/pointer.png" download="on-air-pointer.png" title="Download pointer cursor (.png)"><img src="cursors/on-air/pointer.png" alt="Pointer cursor" loading="lazy"><span>Pointer</span></a>
+          <a class="cur" href="cursors/on-air/hover.png" download="on-air-hover.png" title="Download hover cursor (.png)"><img src="cursors/on-air/hover.png" alt="Hover cursor" loading="lazy"><span>Hover</span></a>
+          <a class="cur" href="cursors/on-air/loading.png" download="on-air-loading.png" title="Download loading cursor (.png)"><img src="cursors/on-air/loading.png" alt="Loading cursor" loading="lazy"><span>Loading</span></a>
+      </div>
+      <a class="btn" href="cursors/on-air-cursors.zip" download>Download pack (.zip)</a>
+    </div>
+    </div>
+    <div class="pack-all">
+      <a class="btn" href="cursors/all-cursor-packs.zip" download>Download all cursor packs (.zip)</a>
+      <small>All 5 packs in one zip</small>
+    </div>
+  </section>
 
   <section class="install">
     <h2>Installation</h2>
