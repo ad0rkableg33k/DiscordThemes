@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DiscordThemes | ad0rkableg33k</title>
-<meta name="description" content="Gothic punk Equicord themes by ad0rkableg33k — pink, neon green, and blood red.">
+<meta name="description" content="Gothic punk Equicord themes by ad0rkableg33k — pink, neon green, blood red, bats, dragons and witches.">
 <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -16,6 +16,7 @@
     --purple: #b967ff;
     --green: #39ff14;
     --red: #ff1414;
+    --teal: #2de2d0;
   }
   * { box-sizing: border-box; }
   body {
@@ -46,14 +47,14 @@
     font-size: 1.05rem;
   }
   main {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem 4rem;
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
     margin-bottom: 3.5rem;
   }
   .card {
@@ -63,9 +64,51 @@
     padding: 1.75rem;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card:hover { transform: translateY(-4px); }
+
+  /* screenshot preview */
+  .shot {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+    cursor: zoom-in;
+    position: relative;
+    aspect-ratio: 16 / 10;
+  }
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .shot:hover img { transform: scale(1.04); }
+  .shot::after {
+    content: "click to enlarge";
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(0,0,0,0.75);
+    color: #f4d8ee;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .shot:hover::after, .shot:focus-visible::after { opacity: 1; }
+  .shot:focus-visible { outline: 2px solid var(--pink-bright); outline-offset: 2px; }
+
   .swatch {
     height: 10px;
     border-radius: 6px;
@@ -75,6 +118,11 @@
   .swatch.green { background: linear-gradient(90deg, var(--green), var(--purple)); box-shadow: 0 0 12px var(--green); }
   .swatch.red { background: linear-gradient(90deg, var(--red), #4d0000); box-shadow: 0 0 12px var(--red); }
   .swatch.pinkgreen { background: linear-gradient(90deg, var(--pink), var(--green)); box-shadow: 0 0 12px var(--pink); }
+  .swatch.dragon { background: linear-gradient(90deg, var(--purple), var(--teal), var(--pink)); box-shadow: 0 0 12px var(--purple); }
+  .swatch.bat { background: linear-gradient(90deg, var(--purple), var(--green)); box-shadow: 0 0 12px var(--purple); }
+  .swatch.hex { background: linear-gradient(90deg, var(--teal), var(--purple), var(--green)); box-shadow: 0 0 12px var(--teal); }
+  .swatch.onair { background: linear-gradient(90deg, #ffffff, var(--red)); box-shadow: 0 0 12px var(--red); }
+
   .card h2 {
     font-family: 'Creepster', cursive;
     letter-spacing: 1px;
@@ -85,10 +133,15 @@
   .card.green h2 { color: var(--green); text-shadow: 0 0 6px var(--green); }
   .card.red h2 { color: var(--red); text-shadow: 0 0 6px var(--red); }
   .card.pinkgreen h2 { color: var(--pink-bright); text-shadow: 0 0 6px var(--pink), 0 0 14px var(--green); }
-  .card p { color: #c9a8bd; font-size: 0.92rem; min-height: 3.6em; }
+  .card.dragon h2 { color: var(--purple); text-shadow: 0 0 6px var(--purple), 0 0 14px var(--teal); }
+  .card.bat h2 { color: var(--purple); text-shadow: 0 0 6px var(--purple), 0 0 14px var(--green); }
+  .card.hex h2 { color: var(--teal); text-shadow: 0 0 6px var(--teal), 0 0 14px var(--purple); }
+  .card.onair h2 { color: #fff; text-shadow: 0 0 6px var(--red), 0 0 14px var(--red); }
+  .card p { color: #c9a8bd; font-size: 0.92rem; flex: 1; margin-top: 0; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
   .btn {
     display: inline-block;
-    margin-top: 0.75rem;
     padding: 0.65rem 1.2rem;
     border-radius: 8px;
     text-decoration: none;
@@ -98,14 +151,67 @@
     transition: box-shadow 0.15s ease, transform 0.15s ease;
   }
   .btn:hover { transform: scale(1.03); }
+  .btn.alt {
+    background: transparent !important;
+    border: 1px solid currentColor;
+    box-shadow: none !important;
+  }
   .card.pink .btn { background: linear-gradient(135deg, var(--pink), var(--magenta)); box-shadow: 0 0 8px var(--pink); }
   .card.green .btn { background: linear-gradient(135deg, var(--green), var(--purple)); box-shadow: 0 0 8px var(--green); color: #05130a;}
   .card.red .btn { background: linear-gradient(135deg, var(--red), #4d0000); box-shadow: 0 0 8px var(--red); }
   .card.pinkgreen .btn { background: linear-gradient(135deg, var(--pink), var(--green)); box-shadow: 0 0 8px var(--pink); }
+  .card.dragon .btn { background: linear-gradient(135deg, var(--purple), var(--teal)); box-shadow: 0 0 8px var(--purple); color: #07040f; }
+  .card.bat .btn { background: linear-gradient(135deg, var(--purple), var(--green)); box-shadow: 0 0 8px var(--purple); color: #07040f; }
+  .card.hex .btn { background: linear-gradient(135deg, var(--teal), var(--purple)); box-shadow: 0 0 8px var(--teal); color: #05080c; }
+  .card.onair .btn { background: linear-gradient(135deg, #ffffff, var(--red)); box-shadow: 0 0 8px var(--red); color: #1a0000; }
+  .card.pink .btn.alt { color: var(--pink-bright); }
+  .card.green .btn.alt { color: var(--green); }
+  .card.red .btn.alt { color: var(--red); }
+  .card.pinkgreen .btn.alt { color: var(--pink-bright); }
+  .card.dragon .btn.alt { color: var(--purple); }
+  .card.bat .btn.alt { color: var(--purple); }
+  .card.hex .btn.alt { color: var(--teal); }
+  .card.onair .btn.alt { color: #fff; }
   .card.pink .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--magenta); }
   .card.green .btn:hover { box-shadow: 0 0 16px var(--green), 0 0 30px var(--purple); }
   .card.red .btn:hover { box-shadow: 0 0 16px var(--red); }
   .card.pinkgreen .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--green); }
+  .card.dragon .btn:hover { box-shadow: 0 0 16px var(--purple), 0 0 30px var(--teal); }
+  .card.bat .btn:hover { box-shadow: 0 0 16px var(--purple), 0 0 30px var(--green); }
+  .card.hex .btn:hover { box-shadow: 0 0 16px var(--teal), 0 0 30px var(--purple); }
+  .card.onair .btn:hover { box-shadow: 0 0 16px var(--red), 0 0 30px var(--red); }
+  .card .btn.alt:hover { box-shadow: 0 0 10px currentColor !important; }
+
+  /* lightbox */
+  dialog.lightbox {
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    background: var(--black);
+    padding: 0;
+    max-width: min(96vw, 1400px);
+    max-height: 94vh;
+    overflow: hidden;
+  }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,0.88); }
+  dialog.lightbox img { display: block; max-width: 100%; max-height: 90vh; margin: 0 auto; }
+  dialog.lightbox form { position: absolute; top: 8px; right: 8px; margin: 0; }
+  dialog.lightbox button {
+    background: rgba(0,0,0,0.8);
+    color: #f4d8ee;
+    border: 1px solid var(--magenta);
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  dialog.lightbox p {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #c9a8bd;
+  }
 
   section.install {
     background: var(--black-soft);
@@ -150,31 +256,100 @@
   <div class="grid">
 
     <div class="card pink">
+      <button class="shot" type="button" data-full="images/gothic%20punk.png" data-title="Gothic Punk" aria-label="Enlarge Gothic Punk preview">
+        <img src="images/gothic%20punk.png" alt="Gothic Punk theme preview" loading="lazy">
+      </button>
       <div class="swatch pink"></div>
       <h2>Gothic Punk</h2>
       <p>Hot pink & magenta over black. The original — witchy glow on everything from headers to the cursor trail.</p>
-      <a class="btn" href="themes/gothic-punk-pink-magenta.theme.css" download>Download .theme.css</a>
+      <div class="actions">
+        <a class="btn" href="themes/gothic-punk-pink-magenta.theme.css" download>Download .theme.css</a>
+      </div>
     </div>
 
     <div class="card green">
+      <button class="shot" type="button" data-full="images/neon.png" data-title="Neon Coven" aria-label="Enlarge Neon Coven preview">
+        <img src="images/neon.png" alt="Neon Coven theme preview" loading="lazy">
+      </button>
       <div class="swatch green"></div>
       <h2>Neon Coven</h2>
       <p>Neon green main color with purple accents. Same effects, totally different mood — more toxic-glow than witchy-glow.</p>
-      <a class="btn" href="themes/neon-coven-green-purple.theme.css" download>Download .theme.css</a>
+      <div class="actions">
+        <a class="btn" href="themes/neon-coven-green-purple.theme.css" download>Download .theme.css</a>
+      </div>
     </div>
 
     <div class="card red">
+      <button class="shot" type="button" data-full="images/blood%20coven.png" data-title="Blood Coven" aria-label="Enlarge Blood Coven preview">
+        <img src="images/blood%20coven.png" alt="Blood Coven theme preview" loading="lazy">
+      </button>
       <div class="swatch red"></div>
       <h2>Blood Coven</h2>
       <p>Blood red main color, and regular body text set to glowing black — a red halo around black text for that "shadow made visible" look.</p>
-      <a class="btn" href="themes/blood-coven-red-black.theme.css" download>Download .theme.css</a>
+      <div class="actions">
+        <a class="btn" href="themes/blood-coven-red-black.theme.css" download>Download .theme.css</a>
+      </div>
     </div>
 
     <div class="card pinkgreen">
+      <button class="shot" type="button" data-full="images/static.png" data-title="Static Shock" aria-label="Enlarge Static Shock preview">
+        <img src="images/static.png" alt="Static Shock theme preview" loading="lazy">
+      </button>
       <div class="swatch pinkgreen"></div>
       <h2>Static Shock</h2>
       <p>Hot pink as the main color with neon green accents throughout — same black background, same glow effects, just a punchier two-tone combo.</p>
-      <a class="btn" href="themes/pink-neon-static.theme.css" download>Download .theme.css</a>
+      <div class="actions">
+        <a class="btn" href="themes/pink-neon-static.theme.css" download>Download .theme.css</a>
+      </div>
+    </div>
+
+    <div class="card dragon">
+      <button class="shot" type="button" data-full="images/amathyst%20dragon.png" data-title="Amethyst Wyrm" aria-label="Enlarge Amethyst Wyrm preview">
+        <img src="images/amathyst%20dragon.png" alt="Amethyst Wyrm theme preview" loading="lazy">
+      </button>
+      <div class="swatch dragon"></div>
+      <h2>Amethyst Wyrm</h2>
+      <p>Purple, teal and magenta dragon theme. Night sky with a dragon moon, neon pink glowing text, sparkles and clouds in every section, dragon cursors.</p>
+      <div class="actions">
+        <a class="btn" href="themes/dragon-theme.theme.css" download>Download .theme.css</a>
+      </div>
+    </div>
+
+    <div class="card bat">
+      <button class="shot" type="button" data-full="images/bat%20cave.png" data-title="Bat Cave" aria-label="Enlarge Bat Cave preview">
+        <img src="images/bat%20cave.png" alt="Bat Cave theme preview" loading="lazy">
+      </button>
+      <div class="swatch bat"></div>
+      <h2>Bat Cave</h2>
+      <p>Bright purple, neon green and black. Bat cursors with a neon glow, drippy blood headers, a night sky with a moon and stars. Bats everywhere.</p>
+      <div class="actions">
+        <a class="btn" href="themes/bat-theme.theme.css" download>Download .theme.css</a>
+      </div>
+    </div>
+
+    <div class="card hex">
+      <button class="shot" type="button" data-full="images/hex%20and%20haunt.png" data-title="Hex &amp; Haunt" aria-label="Enlarge Hex and Haunt preview">
+        <img src="images/hex%20and%20haunt.png" alt="Hex and Haunt theme preview" loading="lazy">
+      </button>
+      <div class="swatch hex"></div>
+      <h2>Hex &amp; Haunt</h2>
+      <p>Witchy night theme in black, turquoise, purple, silver and neon green. Moonlit sky, drifting ghosts, bat flocks, dripping slime, spiders and wand cursors. Preview shows the main version.</p>
+      <div class="actions">
+        <a class="btn" href="themes/hex-and-haunt.theme.css" download>Download .theme.css</a>
+        <a class="btn alt" href="themes/hex-and-haunt.theme2.css" download>No loading cursor</a>
+      </div>
+    </div>
+
+    <div class="card onair">
+      <button class="shot" type="button" data-full="images/on%20air.png" data-title="On Air" aria-label="Enlarge On Air preview">
+        <img src="images/on%20air.png" alt="On Air theme preview" loading="lazy">
+      </button>
+      <div class="swatch onair"></div>
+      <h2>On Air</h2>
+      <p>Black, white and red music studio theme. Stage lights, a live equalizer, rising notes, speakers, glowing lettering and a mic cursor.</p>
+      <div class="actions">
+        <a class="btn" href="themes/on-air.theme.css" download>Download .theme.css</a>
+      </div>
     </div>
 
   </div>
@@ -193,9 +368,35 @@
   </section>
 </main>
 
+<dialog class="lightbox" id="lightbox" aria-label="Theme preview">
+  <form method="dialog"><button aria-label="Close preview">✕</button></form>
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-title"></p>
+</dialog>
+
 <footer>
   made with 🖤 by <a href="https://github.com/ad0rkableg33k">ad0rkableg33k</a>
 </footer>
+
+<script>
+  (function () {
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    var title = document.getElementById('lightbox-title');
+    document.querySelectorAll('.shot').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        img.src = btn.dataset.full;
+        img.alt = btn.dataset.title + ' theme preview (full size)';
+        title.textContent = btn.dataset.title;
+        box.showModal();
+      });
+    });
+    // click backdrop to close
+    box.addEventListener('click', function (e) {
+      if (e.target === box) box.close();
+    });
+  })();
+</script>
 
 </body>
 </html>
