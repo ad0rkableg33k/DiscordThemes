@@ -121,6 +121,7 @@
   .swatch.dragon { background: linear-gradient(90deg, var(--purple), var(--teal), var(--pink)); box-shadow: 0 0 12px var(--purple); }
   .swatch.bat { background: linear-gradient(90deg, var(--purple), var(--green)); box-shadow: 0 0 12px var(--purple); }
   .swatch.hex { background: linear-gradient(90deg, var(--teal), var(--purple), var(--green)); box-shadow: 0 0 12px var(--teal); }
+  .swatch.sorrow { background: linear-gradient(90deg, #1b2a8a, var(--red)); box-shadow: 0 0 12px var(--red); }
   .swatch.onair { background: linear-gradient(90deg, #ffffff, var(--red)); box-shadow: 0 0 12px var(--red); }
 
   .card h2 {
@@ -136,6 +137,7 @@
   .card.dragon h2 { color: var(--purple); text-shadow: 0 0 6px var(--purple), 0 0 14px var(--teal); }
   .card.bat h2 { color: var(--purple); text-shadow: 0 0 6px var(--purple), 0 0 14px var(--green); }
   .card.hex h2 { color: var(--teal); text-shadow: 0 0 6px var(--teal), 0 0 14px var(--purple); }
+  .card.sorrow h2 { color: #ff4d4d; text-shadow: 0 0 6px var(--red), 0 0 14px #2a3fd6; }
   .card.onair h2 { color: #fff; text-shadow: 0 0 6px var(--red), 0 0 14px var(--red); }
   .card p { color: #c9a8bd; font-size: 0.92rem; flex: 1; margin-top: 0; }
 
@@ -163,6 +165,7 @@
   .card.dragon .btn { background: linear-gradient(135deg, var(--purple), var(--teal)); box-shadow: 0 0 8px var(--purple); color: #07040f; }
   .card.bat .btn { background: linear-gradient(135deg, var(--purple), var(--green)); box-shadow: 0 0 8px var(--purple); color: #07040f; }
   .card.hex .btn { background: linear-gradient(135deg, var(--teal), var(--purple)); box-shadow: 0 0 8px var(--teal); color: #05080c; }
+  .card.sorrow .btn { background: linear-gradient(135deg, #2a3fd6, var(--red)); box-shadow: 0 0 8px var(--red); }
   .card.onair .btn { background: linear-gradient(135deg, #ffffff, var(--red)); box-shadow: 0 0 8px var(--red); color: #1a0000; }
   .card.pink .btn.alt { color: var(--pink-bright); }
   .card.green .btn.alt { color: var(--green); }
@@ -171,6 +174,7 @@
   .card.dragon .btn.alt { color: var(--purple); }
   .card.bat .btn.alt { color: var(--purple); }
   .card.hex .btn.alt { color: var(--teal); }
+  .card.sorrow .btn.alt { color: #ff4d4d; }
   .card.onair .btn.alt { color: #fff; }
   .card.pink .btn:hover { box-shadow: 0 0 16px var(--pink), 0 0 30px var(--magenta); }
   .card.green .btn:hover { box-shadow: 0 0 16px var(--green), 0 0 30px var(--purple); }
@@ -179,6 +183,7 @@
   .card.dragon .btn:hover { box-shadow: 0 0 16px var(--purple), 0 0 30px var(--teal); }
   .card.bat .btn:hover { box-shadow: 0 0 16px var(--purple), 0 0 30px var(--green); }
   .card.hex .btn:hover { box-shadow: 0 0 16px var(--teal), 0 0 30px var(--purple); }
+  .card.sorrow .btn:hover { box-shadow: 0 0 16px var(--red), 0 0 30px #2a3fd6; }
   .card.onair .btn:hover { box-shadow: 0 0 16px var(--red), 0 0 30px var(--red); }
   .card .btn.alt:hover { box-shadow: 0 0 10px currentColor !important; }
 
@@ -337,6 +342,18 @@
       <div class="actions">
         <a class="btn" href="themes/hex-and-haunt.theme.css" download>Download .theme.css</a>
         <a class="btn alt" href="themes/hex-and-haunt.theme2.css" download>No loading cursor</a>
+      </div>
+    </div>
+
+    <div class="card sorrow">
+      <button class="shot" type="button" data-full="images/midnight%20sorrow.png" data-title="Midnight Sorrow" aria-label="Enlarge Midnight Sorrow preview">
+        <img src="images/midnight%20sorrow.png" alt="Midnight Sorrow theme preview" loading="lazy">
+      </button>
+      <div class="swatch sorrow"></div>
+      <h2>Midnight Sorrow</h2>
+      <p>Rainy midnight blue with blood-red glowing text. Dagger cursors, a crow moon, fog, thorns and broken hearts.</p>
+      <div class="actions">
+        <a class="btn" href="themes/midnight-sorrow.theme.css" download>Download .theme.css</a>
       </div>
     </div>
 
