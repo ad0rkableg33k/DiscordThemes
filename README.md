@@ -43,7 +43,9 @@ Every theme's cursors are also available as standalone packs in [`cursors/mac-wi
 
 **Mac** (macOS 15 Sequoia or newer): install [MaCursor](https://github.com/writronic/MaCursor), open it, choose **File > Convert Theme...**, pick the theme folder from the unzipped pack, then select the theme in the library and apply it.
 
-**Windows:** unzip the pack, right-click `install.inf` in the theme folder and choose **Install**, then go to **Settings > Bluetooth & devices > Mouse > Additional mouse settings > Pointers**, pick the theme in the **Scheme** dropdown and click **Apply**. If the scheme doesn't appear, browse to the `.cur` files by hand: `Pointer.cur` is the arrow, `Link.cur` is hover and `Busy.cur` is loading.
+**Windows (easiest):** download the one-click installer for your theme from [`cursors/mac-windows/`](cursors/mac-windows) (for example `Install-Midnight-Sorrow-Cursors.bat`) and double-click it. Type `1` for normal size or `2` for small, then press Enter. Run it again and type `3` to go back to the Windows defaults. Windows may warn about a downloaded script: choose **Keep**, then **More info > Run anyway**. You can open the file in Notepad to read what it does.
+
+**Windows (zip):** unzip the pack, right-click `install.inf` in the theme folder and choose **Install**, then go to **Settings > Bluetooth & devices > Mouse > Additional mouse settings > Pointers**, pick the theme in the **Scheme** dropdown and click **Apply**. If the scheme doesn't appear, browse to the `.cur` files by hand: `Pointer.cur` is the arrow, `Link.cur` is hover and `Busy.cur` is loading.
 
 ## License
 
