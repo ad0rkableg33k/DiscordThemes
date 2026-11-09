@@ -335,6 +335,7 @@
     font-size: 0.85rem;
   }
   footer a { color: var(--pink-bright); }
+  section.install p a, section.install li a { color: var(--pink-bright); }
 </style>
 </head>
 <body>
@@ -557,6 +558,45 @@
       <a class="btn" href="cursors/all-cursor-packs.zip" download>Download all cursor packs (.zip)</a>
       <small>All 5 packs in one zip</small>
     </div>
+  </section>
+
+  <section class="install" id="cursor-install">
+    <h2>Use the cursors on your Mac or Windows PC</h2>
+    <p>These packs have a cursor for every pointer type (arrow, link, busy, text, resize and more), in two sizes: the normal one and a <code>-small-32px</code> one if the cursors look too big on your screen.</p>
+    <div class="pack-grid">
+      <div class="pack"><h3>Amethyst Wyrm</h3><a class="btn" href="cursors/mac-windows/amethyst-wyrm-mac-windows.zip" download>Mac + Windows (.zip)</a></div>
+      <div class="pack"><h3>Bat Cave</h3><a class="btn" href="cursors/mac-windows/bat-cave-mac-windows.zip" download>Mac + Windows (.zip)</a></div>
+      <div class="pack"><h3>Hex &amp; Haunt</h3><a class="btn" href="cursors/mac-windows/hex-and-haunt-mac-windows.zip" download>Mac + Windows (.zip)</a></div>
+      <div class="pack"><h3>Midnight Sorrow</h3><a class="btn" href="cursors/mac-windows/midnight-sorrow-mac-windows.zip" download>Mac + Windows (.zip)</a></div>
+      <div class="pack"><h3>On Air</h3><a class="btn" href="cursors/mac-windows/on-air-mac-windows.zip" download>Mac + Windows (.zip)</a></div>
+    </div>
+    <div class="pack-all">
+      <a class="btn" href="cursors/mac-windows/all-mac-windows-packs.zip" download>Download all 5 (.zip)</a>
+    </div>
+
+    <h3>On a Mac</h3>
+    <p>macOS can't change cursors by itself, so you need a free helper app. It needs macOS 15 Sequoia or newer.</p>
+    <ol>
+      <li>Download a pack above and double-click the zip to unzip it.</li>
+      <li>Get <a href="https://github.com/writronic/MaCursor">MaCursor</a>: on its Releases page, download the <code>.dmg</code>, open it, and drag MaCursor into <strong>Applications</strong>.</li>
+      <li>Open MaCursor and choose <strong>File &rarr; Convert Theme&hellip;</strong>.</li>
+      <li>Pick the theme folder from the unzipped pack (for example <code>Midnight-Sorrow</code>). Use the <code>-small-32px</code> folder if the cursors look too big.</li>
+      <li>Select the new theme in MaCursor's library and apply it. Follow any permission prompt MaCursor shows.</li>
+    </ol>
+
+    <h3>On Windows</h3>
+    <ol>
+      <li>Download a pack above, right-click the zip and choose <strong>Extract All</strong>.</li>
+      <li>Open the theme folder inside (for example <code>Midnight-Sorrow</code>), right-click <code>install.inf</code> and choose <strong>Install</strong>.</li>
+      <li>Open <strong>Settings &rarr; Bluetooth &amp; devices &rarr; Mouse &rarr; Additional mouse settings</strong> and go to the <strong>Pointers</strong> tab.</li>
+      <li>Pick the theme's name in the <strong>Scheme</strong> dropdown and click <strong>Apply</strong>.</li>
+    </ol>
+    <h3>Just in case</h3>
+    <ul>
+      <li><strong>No <code>install.inf</code> option or the scheme is missing?</strong> On the Pointers tab, select a cursor in the list, click <strong>Browse</strong>, and pick the matching <code>.cur</code> file by hand. <code>Pointer.cur</code> is the normal arrow, <code>Link.cur</code> is the hover hand, and <code>Busy.cur</code> is loading.</li>
+      <li><strong>On macOS 14 or older?</strong> MaCursor won't run. The older Mousecape app may work, but it isn't reliable on current systems.</li>
+      <li>These cursors only change your system pointer. The Discord themes already include their own cursors inside Discord.</li>
+    </ul>
   </section>
 
   <section class="install">
