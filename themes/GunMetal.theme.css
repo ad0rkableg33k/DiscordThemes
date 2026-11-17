@@ -1,0 +1,295 @@
+/**
+ * @name GunMetal
+ * @author ad0rkableg33k
+ * @version 1.0.0
+ * @description Blacked-out, neon-red, bullet-riddled Discord theme. Pistol + flaming bullet banner up top.
+ */
+
+:root {
+  /* palette: gunmetal blacks */
+  --gm-black-0: #050505;
+  --gm-black-1: #0a0a0b;
+  --gm-black-2: #101012;
+  --gm-black-3: #17171a;
+  --gm-grey-1: #1e1e22;
+  --gm-grey-2: #2a2a2f;
+  --gm-grey-3: #3a3a41;
+  --gm-red: #ff2a2a;
+  --gm-red-hot: #ff0a0a;
+  --gm-red-dim: #b01818;
+  --gm-brass: #d9a441;
+
+  --gm-glow: 0 0 4px rgba(255, 10, 10, 0.9), 0 0 12px rgba(255, 0, 0, 0.55);
+  --gm-glow-soft: 0 0 6px rgba(255, 0, 0, 0.5);
+
+  /* cursors: red crosshair, brass-gold when over clickables */
+  --gm-cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cg stroke='%23000' stroke-width='4'%3E%3Ccircle cx='16' cy='16' r='8'/%3E%3Cpath d='M16 1v8M16 23v8M1 16h8M23 16h8'/%3E%3C/g%3E%3Cg stroke='%23ff2a2a' stroke-width='2'%3E%3Ccircle cx='16' cy='16' r='8'/%3E%3Cpath d='M16 1v8M16 23v8M1 16h8M23 16h8'/%3E%3C/g%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ff2a2a'/%3E%3C/svg%3E") 16 16, crosshair;
+  --gm-cursor-lock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cg stroke='%23000' stroke-width='4'%3E%3Crect x='7' y='7' width='18' height='18' transform='rotate(45 16 16)'/%3E%3Cpath d='M16 1v7M16 24v7M1 16h7M24 16h7'/%3E%3C/g%3E%3Cg stroke='%23ffb347' stroke-width='2'%3E%3Crect x='7' y='7' width='18' height='18' transform='rotate(45 16 16)'/%3E%3Cpath d='M16 1v7M16 24v7M1 16h7M24 16h7'/%3E%3C/g%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3' fill='%23ff0a0a'/%3E%3C/svg%3E") 16 16, pointer;
+
+  /* tall banner for the server header: bullet + flame tail + pistol */
+  --gm-banner-tall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 160' preserveAspectRatio='xMidYMax slice'%3E%3Cdefs%3E%3Cfilter id='g' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3ClinearGradient id='f' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23ffe08a'/%3E%3Cstop offset='.3' stop-color='%23ff6a1f'/%3E%3Cstop offset='.7' stop-color='%23ff0a0a' stop-opacity='.7'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/linearGradient%3E%3CradialGradient id='m'%3E%3Cstop offset='0' stop-color='%23fff2c0'/%3E%3Cstop offset='.35' stop-color='%23ff6a00' stop-opacity='.85'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23303036'/%3E%3Cstop offset='1' stop-color='%23101012'/%3E%3C/linearGradient%3E%3CradialGradient id='bg' cx='.5' cy='.75' r='.8'%3E%3Cstop offset='0' stop-color='%23401010'/%3E%3Cstop offset='1' stop-color='%23050505'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='400' height='160' fill='url(%23bg)'/%3E%3Cg transform='translate(-125 46)'%3E%3Ccircle cx='336' cy='56' r='60' fill='url(%23m)'/%3E%3Cpath d='M192 50 C232 28 292 40 326 54 C292 68 232 84 192 62Z' fill='url(%23f)' filter='url(%23g)'/%3E%3Cpath d='M192 54 C240 46 290 50 318 55 C290 60 240 66 192 58Z' fill='%23fff2c0' opacity='.8'/%3E%3Cpath d='M140 56 q8 -9 24 -9 h28 v18 h-28 q-16 0 -24 -9z' fill='%23d9a441' stroke='%23ff2a2a' stroke-width='1.2' filter='url(%23g)'/%3E%3Crect x='186' y='47' width='6' height='18' fill='%237a1010'/%3E%3Cg filter='url(%23g)' stroke='%23ff2a2a' stroke-width='1.5' stroke-linejoin='round'%3E%3Crect x='340' y='56' width='12' height='6' fill='%230a0a0b'/%3E%3Crect x='340' y='40' width='180' height='28' rx='3' fill='url(%23s)'/%3E%3Crect x='330' y='44' width='12' height='18' rx='2' fill='%23101012'/%3E%3Crect x='508' y='34' width='8' height='6' fill='%23101012'/%3E%3Crect x='344' y='36' width='6' height='5' fill='%23101012'/%3E%3Cpolygon points='478,68 520,68 508,108 468,108' fill='%23141416'/%3E%3Cpath d='M462 68 v10 q0 12 -14 12 h-18 q-8 0 -8 -12 v-10' fill='none'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+  /* banner: pistol firing a flaming bullet (inline SVG) */
+  --gm-banner: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 120' preserveAspectRatio='xMaxYMid meet'%3E%3Cdefs%3E%3Cfilter id='g' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='3' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3ClinearGradient id='f' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23ffe08a'/%3E%3Cstop offset='.3' stop-color='%23ff6a1f'/%3E%3Cstop offset='.7' stop-color='%23ff0a0a' stop-opacity='.7'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/linearGradient%3E%3CradialGradient id='m'%3E%3Cstop offset='0' stop-color='%23fff2c0'/%3E%3Cstop offset='.35' stop-color='%23ff6a00' stop-opacity='.85'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23303036'/%3E%3Cstop offset='1' stop-color='%23101012'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='336' cy='56' r='52' fill='url(%23m)'/%3E%3Cpath d='M192 50 C232 28 292 40 326 54 C292 68 232 84 192 62Z' fill='url(%23f)' filter='url(%23g)'/%3E%3Cpath d='M192 54 C240 46 290 50 318 55 C290 60 240 66 192 58Z' fill='%23fff2c0' opacity='.8'/%3E%3Cpath d='M140 56 q8 -9 24 -9 h28 v18 h-28 q-16 0 -24 -9z' fill='%23d9a441' stroke='%23ff2a2a' stroke-width='1.2' filter='url(%23g)'/%3E%3Crect x='186' y='47' width='6' height='18' fill='%237a1010'/%3E%3Cg filter='url(%23g)' stroke='%23ff2a2a' stroke-width='1.5' stroke-linejoin='round'%3E%3Crect x='340' y='56' width='12' height='6' fill='%230a0a0b'/%3E%3Crect x='340' y='40' width='180' height='28' rx='3' fill='url(%23s)'/%3E%3Crect x='330' y='44' width='12' height='18' rx='2' fill='%23101012'/%3E%3Crect x='508' y='34' width='8' height='6' fill='%23101012'/%3E%3Crect x='344' y='36' width='6' height='5' fill='%23101012'/%3E%3Cpolygon points='478,68 520,68 508,108 468,108' fill='%23141416'/%3E%3Cpath d='M462 68 v10 q0 12 -14 12 h-18 q-8 0 -8 -12 v-10' fill='none'/%3E%3C/g%3E%3Cg stroke='%23ff2a2a' stroke-width='1' opacity='.55'%3E%3Cline x1='400' y1='46' x2='400' y2='62'/%3E%3Cline x1='408' y1='46' x2='408' y2='62'/%3E%3Cline x1='416' y1='46' x2='416' y2='62'/%3E%3Cline x1='424' y1='46' x2='424' y2='62'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* ---- core Discord variable overrides ---- */
+  --background-primary: var(--gm-black-2);
+  --background-secondary: var(--gm-black-1);
+  --background-secondary-alt: var(--gm-black-0);
+  --background-tertiary: var(--gm-black-0);
+  --background-accent: var(--gm-grey-2);
+  --background-floating: var(--gm-black-1);
+  --background-mobile-primary: var(--gm-black-2);
+  --background-mobile-secondary: var(--gm-black-1);
+  --background-modifier-hover: rgba(255, 20, 20, 0.07);
+  --background-modifier-active: rgba(255, 20, 20, 0.13);
+  --background-modifier-selected: rgba(255, 20, 20, 0.18);
+  --background-modifier-accent: rgba(255, 255, 255, 0.05);
+  --channeltextarea-background: var(--gm-black-3);
+  --chat-background: var(--gm-black-2);
+  --deprecated-card-bg: var(--gm-black-1);
+  --deprecated-store-bg: var(--gm-black-1);
+  --input-background: var(--gm-black-3);
+
+  /* newer Discord token set */
+  --background-base-lowest: var(--gm-black-0);
+  --background-base-lower: var(--gm-black-1);
+  --background-base-low: var(--gm-black-2);
+  --background-surface-high: var(--gm-black-3);
+  --background-surface-higher: var(--gm-grey-1);
+  --background-surface-highest: var(--gm-grey-2);
+  --bg-base-primary: var(--gm-black-2);
+  --bg-base-secondary: var(--gm-black-1);
+  --bg-base-tertiary: var(--gm-black-0);
+  --bg-surface-overlay: var(--gm-black-1);
+  --bg-surface-raised: var(--gm-black-3);
+
+  --text-normal: var(--gm-red);
+  --text-default: var(--gm-red);
+  --text-strong: #ff5a5a;
+  --text-muted: var(--gm-red-dim);
+  --text-secondary: var(--gm-red-dim);
+  --text-tertiary: #7a1010;
+  --text-link: #ff6a3d;
+  --header-primary: #ff3b3b;
+  --header-secondary: var(--gm-red-dim);
+  --channels-default: var(--gm-red-dim);
+  --channel-icon: var(--gm-red-dim);
+  --interactive-normal: var(--gm-red-dim);
+  --interactive-hover: #ff4a4a;
+  --interactive-active: #ffffff;
+  --interactive-muted: #5a0d0d;
+
+  --brand-experiment: var(--gm-red-hot);
+  --brand-500: var(--gm-red-hot);
+  --brand-360: #d01010;
+  --button-filled-brand-background: #c40f0f;
+  --scrollbar-thin-thumb: #6a0f0f;
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #6a0f0f;
+  --scrollbar-auto-track: var(--gm-black-0);
+}
+
+/* ---------- neon text everywhere ---------- */
+body,
+[class*="markup_"],
+[class*="name_"],
+[class*="username_"],
+[class*="title_"],
+[class*="channelName_"],
+[class*="content_"] span,
+[class*="header_"] h1, [class*="header_"] h2, [class*="header_"] h3,
+[class*="message_"] [class*="contents_"] {
+  text-shadow: var(--gm-glow-soft);
+}
+
+[class*="username_"],
+[class*="channelName_"],
+[class*="title_"] [class*="children_"],
+h1, h2, h3 {
+  text-shadow: var(--gm-glow);
+  letter-spacing: 0.03em;
+}
+
+/* keep inputs/code readable */
+code, pre, [class*="markup_"] code {
+  text-shadow: none;
+  background: #000 !important;
+  color: #ff7a5c !important;
+  border: 1px solid #3a0b0b !important;
+}
+
+/* ---------- top banner: pistol + flaming bullet ---------- */
+[class*="titleBar_"],
+[class*="bar_"][class*="themed"],
+section[class*="title_"] {
+  background-color: var(--gm-black-0) !important;
+  background-image: var(--gm-banner) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: auto 100% !important;
+  border-bottom: 1px solid var(--gm-red-dim) !important;
+  box-shadow: 0 2px 18px rgba(255, 0, 0, 0.35);
+}
+
+/* server/channel list header gets the same banner, taller */
+/* server name: bigger, glowing, pinned to the top over the art */
+[class*="sidebar_"] [class*="headerContent_"],
+[class*="sidebar_"] [class*="guildName"] {
+  text-shadow: 0 0 6px #000, var(--gm-glow);
+  font-size: 18px;
+}
+
+/* ---------- bullets ---------- */
+
+/* bullet row divider: a belt of brass rounds */
+[class*="sidebar_"] nav::after,
+[class*="title_"]::after {
+  content: "";
+  display: block;
+  height: 8px;
+  background:
+    repeating-linear-gradient(90deg,
+      var(--gm-brass) 0 9px,
+      #7a1010 9px 11px,
+      transparent 11px 16px);
+  border-radius: 4px 6px 6px 4px;
+  opacity: 0.75;
+  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.7));
+}
+
+/* channels get a round in the chamber */
+[class*="channel_"] [class*="name_"]::before {
+  content: "\2981\00a0";   /* ⦁ */
+  color: var(--gm-brass);
+  text-shadow: 0 0 6px rgba(255, 150, 0, 0.9);
+  margin-right: 2px;
+}
+
+[class*="channel_"][class*="selected"] [class*="name_"]::before {
+  content: "\27A4\00a0";   /* ➤ locked and loaded */
+  color: var(--gm-red-hot);
+  text-shadow: var(--gm-glow);
+}
+
+/* ---------- panels, borders, glow ---------- */
+[class*="sidebar_"],
+[class*="panels_"],
+[class*="members_"],
+[class*="privateChannels_"] {
+  background: linear-gradient(180deg, var(--gm-black-1), var(--gm-black-0)) !important;
+  border-right: 1px solid #2a0a0a;
+}
+
+[class*="chatContent_"],
+[class*="chat_"] {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(255, 0, 0, 0.07), transparent 55%),
+    var(--gm-black-2) !important;
+}
+
+[class*="channelTextArea_"],
+[class*="textArea_"] {
+  background: var(--gm-black-3) !important;
+  border: 1px solid #4a0d0d;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.25), inset 0 0 8px rgba(0, 0, 0, 0.7);
+  border-radius: 6px;
+}
+[class*="channelTextArea_"]:focus-within {
+  border-color: var(--gm-red-hot);
+  box-shadow: 0 0 16px rgba(255, 0, 0, 0.55), inset 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* hover + selected channel */
+[class*="channel_"]:hover,
+[class*="message_"]:hover {
+  background: rgba(255, 20, 20, 0.06) !important;
+}
+[class*="channel_"][class*="selected"] {
+  background: rgba(255, 20, 20, 0.15) !important;
+  box-shadow: inset 3px 0 0 var(--gm-red-hot), 0 0 12px rgba(255, 0, 0, 0.25);
+}
+
+/* avatars: red ring */
+[class*="avatar_"] img,
+[class*="avatar_"] svg {
+  filter: drop-shadow(0 0 4px rgba(255, 0, 0, 0.6));
+}
+
+/* mention pills: muzzle flash */
+[class*="mention"] {
+  background: rgba(255, 60, 0, 0.2) !important;
+  color: #ffb27a !important;
+  text-shadow: 0 0 6px rgba(255, 120, 0, 0.9);
+  border-radius: 3px;
+}
+
+/* unread badges: little brass rounds */
+[class*="numberBadge_"], [class*="unreadMentionsBar_"] {
+  background: var(--gm-brass) !important;
+  color: #000 !important;
+  text-shadow: none;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.8);
+}
+
+/* buttons */
+button[class*="colorBrand"], button[class*="lookFilled"][class*="Brand"] {
+  background: linear-gradient(180deg, #d41414, #7a0a0a) !important;
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+  text-shadow: 0 0 4px #000;
+}
+
+/* scrollbars: bullet-casing thin */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--gm-black-0); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8a1111, #3a0606);
+  border-radius: 4px;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+}
+
+/* selection */
+::selection { background: #ff0a0a; color: #000; text-shadow: none; }
+
+/* ---------- cursor ---------- */
+html, body, body * {
+  cursor: var(--gm-cursor) !important;
+}
+a, button, summary, select, label,
+[role="button"], [role="tab"], [role="menuitem"], [role="switch"], [role="checkbox"], [role="option"],
+[class*="clickable"], [class*="interactive"], [class*="pointer"],
+[class*="channel_"], [class*="avatar_"], [class*="hoverButton"], [class*="mention"],
+[class*="listItem"], [class*="tree"] [class*="item"],
+a *, button *, [role="button"] * {
+  cursor: var(--gm-cursor-lock) !important;
+}
+input, textarea, [contenteditable="true"], [class*="markup_"], [class*="textArea_"] * {
+  cursor: text !important;
+}
+
+/* ---------- TOP STRIP: pistol firing a flaming bullet ---------- */
+:root {
+  --gm-top-h: 200px;   /* height of the top strip (title bar + tabs + bookmarks) */
+  --gm-top-left: 88px; /* skip the far-left server rail */
+  --gm-top-opacity: 0.45; /* top banner dimness: 0.2 = subtle, 1 = full blast */
+
+  --gm-banner-wide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 200' preserveAspectRatio='xMaxYMid slice'%3E%3Cdefs%3E%3Cfilter id='g' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='4' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3ClinearGradient id='f' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23ffe08a'/%3E%3Cstop offset='.25' stop-color='%23ff6a1f'/%3E%3Cstop offset='.65' stop-color='%23ff0a0a' stop-opacity='.7'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/linearGradient%3E%3CradialGradient id='m'%3E%3Cstop offset='0' stop-color='%23fff2c0'/%3E%3Cstop offset='.3' stop-color='%23ff6a00' stop-opacity='.85'/%3E%3Cstop offset='1' stop-color='%23ff0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3ClinearGradient id='s' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23363640'/%3E%3Cstop offset='1' stop-color='%23101012'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='1070' cy='100' r='130' fill='url(%23m)'/%3E%3Cg stroke='%23ffb347' stroke-width='3' stroke-linecap='round' opacity='.85' filter='url(%23g)'%3E%3Cpath d='M1070 100 L955 58 M1070 100 L940 100 M1070 100 L955 142 M1070 100 L1010 22 M1070 100 L1010 178'/%3E%3C/g%3E%3Cpath d='M520 86 C650 28 880 50 1070 98 C880 152 650 172 520 114Z' fill='url(%23f)' filter='url(%23g)'/%3E%3Cpath d='M520 94 C700 80 900 90 1066 100 C900 110 700 120 520 106Z' fill='%23fff2c0' opacity='.85'/%3E%3Cg fill='%23ff8a2a' filter='url(%23g)'%3E%3Ccircle cx='640' cy='62' r='3'/%3E%3Ccircle cx='720' cy='140' r='2.5'/%3E%3Ccircle cx='800' cy='54' r='3.5'/%3E%3Ccircle cx='870' cy='150' r='2'/%3E%3Ccircle cx='940' cy='46' r='2.5'/%3E%3Ccircle cx='980' cy='158' r='3'/%3E%3C/g%3E%3Cpath d='M420 100 q16 -18 44 -18 h56 v36 h-56 q-28 0 -44 -18z' fill='%23d9a441' stroke='%23ff2a2a' stroke-width='2' filter='url(%23g)'/%3E%3Crect x='506' y='82' width='10' height='36' fill='%237a1010'/%3E%3Cg transform='translate(486 -1) scale(1.8)'%3E%3Cg filter='url(%23g)' stroke='%23ff2a2a' stroke-width='1.5' stroke-linejoin='round'%3E%3Crect x='340' y='56' width='12' height='6' fill='%230a0a0b'/%3E%3Crect x='340' y='40' width='180' height='28' rx='3' fill='url(%23s)'/%3E%3Crect x='330' y='44' width='12' height='18' rx='2' fill='%23101012'/%3E%3Crect x='508' y='34' width='8' height='6' fill='%23101012'/%3E%3Crect x='344' y='36' width='6' height='5' fill='%23101012'/%3E%3Cpolygon points='478,68 520,68 508,108 468,108' fill='%23141416'/%3E%3Cpath d='M462 68 v10 q0 12 -14 12 h-18 q-8 0 -8 -12 v-10' fill='none'/%3E%3C/g%3E%3Cg stroke='%23ff2a2a' stroke-width='1' opacity='.55'%3E%3Cline x1='400' y1='46' x2='400' y2='62'/%3E%3Cline x1='408' y1='46' x2='408' y2='62'/%3E%3Cline x1='416' y1='46' x2='416' y2='62'/%3E%3Cline x1='424' y1='46' x2='424' y2='62'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* overlay: ignores class names, never blocks clicks, text stays visible underneath */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: var(--gm-top-left);
+  right: 0;
+  height: var(--gm-top-h);
+  background: var(--gm-banner-wide) no-repeat right center / cover;
+  mix-blend-mode: screen;
+  opacity: var(--gm-top-opacity); /* lower = dimmer */
+  filter: brightness(0.7) saturate(0.9);
+  pointer-events: none;
+  z-index: 999;
+  border-bottom: 2px solid rgba(255, 42, 42, 0.85);
+  box-shadow: 0 4px 24px rgba(255, 0, 0, 0.45);
+}
